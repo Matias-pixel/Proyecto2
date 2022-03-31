@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+header{
+    background: #f8942c;
+    width: 100%;
+    height: 80px;
+    clear: both;
+    content: '';
+    display: table;
+    
+}
+
+nav{
+    font-size: 20px;
+    margin-left: 25px;
+    position: relative;
+    float: right;
+    padding-right: 70px;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 70px;
+    padding: 20px 0;
+    float:left;
+}
+
+
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    
+}
+
+nav ul li a:hover{
+    background-color:  wheat;
+}
+
+/*MAGIA*/
+
+.contenedor{
+    background-color: white;
+    width: 90%;
+    max-width: 1500px;
+    margin: 0.5em auto;
+
+    display: grid;
+    gap: 0.5em;
+
+    grid-template-columns: repeat(5,1fr);
+}
+
+
+.contenedor  div,
+.contenedor .contenido,
+.contenedor .aside{
+    background: #fff;
+    padding: 20px;
+    border: 1px solid black;
+}
+
+.contenedor .contenido{
+    grid-column: span 3;
+}
+
+.contenedor .aside{
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenido h1{
+    text-align: center;
+}
+.contenido article{
+    background-color: aqua;
+    padding: 20px;
+    margin-top: 5px;
+  
+}
+
+.contenedor .relacionados{
+
+    background-color: #f8942c;
+    color: wheat;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+}
+
+.contenedor .relacionados:hover{
+    cursor: pointer;
+    background-color: yellow;
+    color: black;   
+}
+
+/*                                CONTACTENOS*/
+
+.contenedor-con div{
+    border: 1px solid black;
+}
+.contenedor-con{
+    
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.5em auto;
+    padding-top: 30px;
+
+    display: grid;
+    gap: 0.5em;
+
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 400px 400px;
+
+}
+
+.contenedor-con .iz{
+    background-color: white;
+    padding: 20px;
+}
+
+.contenedor-con .der{
+    background-color: black;
+    padding: 20px;
+    color: antiquewhite;
+}
+
+#h{
+    padding-top: 30px;
+    text-align: center;
+}
+
+#prueba{
+    
+    background-image: url(img/tayikistan-montanas.png)  ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width:100% ;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.der p {
+    padding-top: 20px;
+}
+
+
+/*QUIENES SOMOS*/
+
+.contenedor-quien{
+    width: 90%;
+    max-width: 1100px;
+    margin: 1.5em auto;
+    padding-top: 50px;
+
+    display: grid;
+    gap: 0.5em;
+
+    grid-template-columns: repeat(2,1fr);
+}
+
+
+
+.contenedor-quien h1{
+    color:#f8942c;
+    padding-bottom: 20px;
+    padding-left: 14px;
+    }
+
+.contenedor-quien p{
+    margin: 25px;
+    margin-right: 20px;
+}
+
+.contenedor-quien div img{
+    width: 500px;
+    height: 400px;
+    padding-left: 50px;
+}
+
+
+
+
