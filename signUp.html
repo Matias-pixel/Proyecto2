@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
     <link rel="icon" href="img/barrio-01-2048x2031.png">
 
-    <title>Contactenos</title>
+
+
+    <title>Sign Up</title>
 </head>
-<body id="prueba">
+<body class="body-login"">
+
     <header >
        
         <nav>
@@ -23,50 +26,32 @@
                 <li><a href="galeria.html">Galeria de imagenes</a></li>
                 <li><a href="contactenos.html">Contactenos</a></li>
                 <li><a href="login.html">Log In</a></li>
-                <li><a href="signUp.html">Sign Up</a></li>
+                <li><a href="#">Sign Up</a></li>
                
             </ul>
         </nav>
     </header>
-    <h1 id="h">Contáctenos</h1>
 
-    <div class="contenedor-con">
-                
-            
-            <div class="formulario">
-            
-                <h2>Ponte en contacto con nosotros</h2>
-                <br>
-                <br>
+    <section class="contenedor_login">
+        <div class="formulario-login">
+            <form action="" method="POST">
+                <h2>Sign Up</h2>
+                <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre: ">
+                <input type="email" name="txt_correo" id="txt_correo" placeholder="Correo Electronico">
+                <input type="password" name="txt_password" id="txt_password" placeholder="Contraseña: ">
+                <input type="password" name="txt_password_confirmacion" id="txt_password_confirmacion" placeholder="Confirme su Contraseña: ">
+                <input type="submit" value="Enviar">
+                <p><a href="#">¿Olvidaste tu contraseña?</a></p>
+                <p><a href="signUp.html">¿Ya estás logeado? Iniciar sesión</a></p>
+            </form>
+    
+        </div>
+        <section class="informacion_login">
+            <h2></h2>
 
-                <form action="" method="POST">
-                    <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre: (Obligatorio)" required>
+        </section>
+    </section>
 
-                    <input type="email" name="correo" id="correo" pattern=".+@gmail\.com" placeholder="Correo electronico:  (Obligatorio)" required>
-
-                    <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo: ">
-
-                    <input type="text" name="txt_asunto" id="txt_asunto" placeholder="Asunto: ">
-
-                    <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Ingrese su mensaje" required="required"></textarea>
-                    <br><br>
-                    <input type="submit" value="enviar" id="btn_enviar">
-                </form>
-                
-                
-            </div>
-            <div class="der">
-                <h2>Información de contacto</h2>
-                <p><span class="material-icons-outlined">location_on</span> Los Fresnos, San Pedro, Rancagua, O'Higgins 
-                    <br><br>
-                    <span class="material-icons-outlined">call</span> Telefono. +569 38526985 
-                    <br><br>
-                    <span class="material-icons-outlined">email</span> Administracion@gmail.com 
-                    <br><br> 
-                    <span class="material-icons-outlined">email</span> asistente@gmail.com</p>
-           
-            </div>
-    </div>
     <footer>
         <div class="grupoUno">
             <div class="box">
@@ -93,6 +78,10 @@
         <div class="grupoDos">
             <small>&copy; 2021 <b>Junta de Vecinos</b> - Todos los derechos reservados</small>
         </div>
-    </footer>    
+    </footer>
+
+
+
+    
 </body>
 </html>
