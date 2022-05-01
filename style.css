@@ -54,12 +54,11 @@ footer .grupoUno{
     width: 80%;
     max-width: 1200px;
     margin: auto;
-
     display: grid;
 
+
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    padding: 15px 0px;
+
 }
 
 footer .grupoUno .box figure{
@@ -79,11 +78,18 @@ footer .grupoUno .box h2{
     color: black;
     margin-bottom: 25px;
     font-size: 20px;
+    padding-top: 17px;
 }
 
 footer .grupoUno .box p{
     color: black;
     margin-bottom: 10px;
+}
+
+footer .grupoDos{
+    text-align: left;
+    width: 100%;
+    background-color: red;
 }
 
 
@@ -314,14 +320,33 @@ body{
 }
 
 .contenedor_imagenes{
-    margin: 0 auto;
-    padding: 14px;
+    background-image: url(img/backgroundGray.jpg)  ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width:100% ;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 24px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 .imagen_equipo{
     padding: 20px;
+    text-align: center;
+    
+  
+}
+
+.imagen_equipo p{
+    padding: 20px;  
+    color: #eeeeee;
+}
+
+.imagen_equipo img{
+
 }
 
 
@@ -381,3 +406,23 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+
+/*GALERIA DE IMAGENES*/
+
+.galeria-column img{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.galeria-row{
+    display: flex;
+    padding: 5px;
+
+}
+
+.galeria-column{
+    flex: 25%;
+    padding: 5px;
+
+}
+
