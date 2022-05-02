@@ -204,6 +204,7 @@ body {
     background-color: white;
     height: 580px;
     padding: 20px;
+    
 }
 
 
@@ -438,21 +439,16 @@ textarea {
 /*VISTA DE ADMINISTRADOR*/
 
 
-.ad-contenedor-img {
+.ad-contenedor-iframe {
     width: 100%;
     max-width: 1800px;
-    display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(4, 1fr);
+
 }
 
-.vista-img {
-    text-align: center;
-    padding: 2px;
-}
-
-.ad-contenedor-img .vista-img img {
-    width: 450px;
-    height: 380px;
-    border: 2px solid black;
+.ad-contenedor-iframe iframe{
+    width: 100%;
+    height: 800px;
+    border: 3px solid black;
+    border-radius: 5px;
 }
