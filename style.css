@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     border: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
 }
 
-header{
+header {
     background: #f8942c;
     width: 100%;
     height: 80px;
     clear: both;
     content: '';
     display: table;
-    
+
 }
 
-nav{
+nav {
     font-size: 20px;
     margin-left: 25px;
     position: relative;
@@ -23,34 +23,36 @@ nav{
     padding-right: 70px;
 }
 
-nav ul li{
+nav ul li {
     list-style: none;
     margin-left: 70px;
     padding: 20px 0;
-    float:left;
+    float: left;
 }
 
 
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: white;
-    
+
 }
 
-nav ul li a:hover{
-    background-color:  wheat;
+nav ul li a:hover {
+    background-color: wheat;
 }
- /*footer*/
+
+/*footer*/
 
 
-footer{
+footer {
     width: 100%;
     height: auto;
     margin-top: auto;
     background-color: #f8942c;
 }
-footer .grupoUno{
+
+footer .grupoUno {
     width: 80%;
     max-width: 1200px;
     margin: auto;
@@ -61,7 +63,7 @@ footer .grupoUno{
 
 }
 
-footer .grupoUno .box figure{
+footer .grupoUno .box figure {
     width: 100%;
     height: 100%;
     display: flex;
@@ -70,39 +72,43 @@ footer .grupoUno .box figure{
     align-items: center;
 }
 
-footer .grupoUno .box figure img{
+footer .grupoUno .box figure img {
     width: 250px;
 }
 
-footer .grupoUno .box h2{
+footer .grupoUno .box h2 {
     color: black;
     margin-bottom: 25px;
     font-size: 20px;
     padding-top: 17px;
 }
 
-footer .grupoUno .box p{
+footer .grupoUno .box p {
     color: black;
     margin-bottom: 10px;
 }
 
-footer .grupoDos{
+footer .grupoDos {
     text-align: left;
     width: 100%;
-    background-color: red;
+    background-color: #3f3f3f;
 }
 
+footer .grupoDos small {
+    color: white;
+}
 
-.redes-sociales{
+.redes-sociales {
     padding: 20px;
 }
 
-.facebook{
+.facebook {
     width: 30px;
     height: 30px;
 }
+
 /*Body*/
-body{
+body {
     display: flex;
 
     min-height: 100vh;
@@ -111,7 +117,7 @@ body{
 
 /*                                                                                 index        */
 
-.contenedor{
+.contenedor {
     background-color: white;
     width: 90%;
     max-width: 1500px;
@@ -120,23 +126,23 @@ body{
     display: grid;
     gap: 0.5em;
 
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 
-.contenedor  div,
+.contenedor div,
 .contenedor .contenido,
-.contenedor .aside{
+.contenedor .aside {
     background: #fff;
     padding: 20px;
     border: 1px solid black;
 }
 
-.contenedor .contenido{
+.contenedor .contenido {
     grid-column: span 3;
 }
 
-.contenedor .aside{
+.contenedor .aside {
     grid-column: span 2;
     display: flex;
     justify-content: center;
@@ -144,17 +150,18 @@ body{
     flex-direction: column;
 }
 
-.contenido h1{
+.contenido h1 {
     text-align: center;
 }
-.contenido article{
+
+.contenido article {
     background-color: aqua;
     padding: 20px;
     margin-top: 5px;
-  
+
 }
 
-.contenedor .relacionados{
+.contenedor .relacionados {
 
     background-color: #f8942c;
     color: wheat;
@@ -165,19 +172,20 @@ body{
     transition: all 0.5s ease;
 }
 
-.contenedor .relacionados:hover{
+.contenedor .relacionados:hover {
     cursor: pointer;
     background-color: yellow;
-    color: black;   
+    color: black;
 }
 
 /*                                                                                             CONTACTENOS*/
 
-.contenedor-con div{
+.contenedor-con div {
     border: 1px solid black;
 }
-.contenedor-con{
-    
+
+.contenedor-con {
+
     width: 100%;
 
     max-width: 1000px;
@@ -192,31 +200,32 @@ body{
 
 }
 
-.formulario{
+.formulario {
     background-color: white;
-    height: 550px;
+    height: 580px;
     padding: 20px;
 }
 
 
 
-.formulario h2{
+.formulario h2 {
     text-align: center;
 }
 
-.formulario input, textarea{
-    
-    margin:0 auto;
+.formulario input,
+textarea {
+
+    margin: 0 auto;
     background-color: #eeeeee;
     width: 100%;
     margin-bottom: 20px;
     padding: 8px;
-    
+
     font-size: 15px;
-    border:none;
+    border: none;
 }
 
-.formulario textarea{
+.formulario textarea {
     min-height: 170px;
     max-height: 170px;
     min-width: 100%;
@@ -224,7 +233,7 @@ body{
 
 }
 
-#btn_enviar{
+#btn_enviar {
     background-color: white;
     border-color: black;
     color: orange;
@@ -236,39 +245,39 @@ body{
 
 }
 
-#btn_enviar:hover{
-    
+#btn_enviar:hover {
+
     background-color: yellow;
     color: black;
     transition: all 0.5s ease;
 }
 
 
-.contenedor-con .der{
-    background-color:#3f3f3f;
+.contenedor-con .der {
+    background-color: #3f3f3f;
     padding: 20px;
     color: antiquewhite;
 }
 
 
 
-#h{
+#h {
     padding-top: 30px;
     text-align: center;
 }
 
-#prueba{
-    background-image: url(img/tayikistan-montanas.png)  ;
+#prueba {
+    background-image: url(img/tayikistan-montanas.png);
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
-    width:100% ;
+    width: 100%;
     background-attachment: fixed;
     background-size: cover;
 }
 
-.der{
-    height: 550px;
+.der {
+    height: 580px;
 }
 
 .der p {
@@ -276,9 +285,9 @@ body{
 }
 
 
-                                                                          /*QUIENES SOMOS*/
+/*QUIENES SOMOS*/
 
-.contenedor-quien{
+.contenedor-quien {
     width: 90%;
     max-width: 1100px;
     margin: 1.5em auto;
@@ -287,44 +296,44 @@ body{
     display: grid;
     gap: 0.5em;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 
 
-.contenedor-quien h1{
-    color:#f8942c;
+.contenedor-quien h1 {
+    color: #f8942c;
     padding-bottom: 20px;
     padding-left: 14px;
-    }
+}
 
-.contenedor-quien p{
+.contenedor-quien p {
     margin: 25px;
     margin-right: 20px;
 }
 
-.contenedor-quien div img{
+.contenedor-quien div img {
     width: 500px;
     height: 400px;
     padding-left: 50px;
 }
 
-.contenedor-quien-bajo{
+.contenedor-quien-bajo {
     background-color: black;
 
 }
 
-.h1{
+.h1 {
     text-align: center;
     color: black;
 }
 
-.contenedor_imagenes{
-    background-image: url(img/backgroundGray.jpg)  ;
+.contenedor_imagenes {
+    background-image: url(img/backgroundGray.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
-    width:100% ;
+    width: 100%;
     background-attachment: fixed;
     background-size: cover;
     padding: 24px;
@@ -333,32 +342,29 @@ body{
     grid-template-columns: repeat(3, 1fr);
 }
 
-.imagen_equipo{
+.imagen_equipo {
     padding: 20px;
     text-align: center;
-    
-  
+
+
 }
 
-.imagen_equipo p{
-    padding: 20px;  
+.imagen_equipo p {
+    padding: 20px;
     color: #eeeeee;
 }
 
-.imagen_equipo img{
-
-}
 
 
 /*                                                                     LOGIN */
 
-.contenedor_login{
+.contenedor_login {
     width: 100%;
 
     max-width: 800px;
     margin: 1.5em auto;
-    padding-top: 30px; 
-    
+    padding-top: 30px;
+
 
     display: grid;
     gap: 0.5em;
@@ -367,62 +373,86 @@ body{
     grid-template-rows: 370px 370px;
 }
 
-.formulario-login{
-   
+.formulario-login {
+
     background-color: white;
     padding: 20px;
     border: 1px solid black;
-    
+
 }
 
-.formulario-login form h2{
+.formulario-login form h2 {
     text-align: center;
     padding-bottom: 20px;
 }
-.formulario-login p{
+
+.formulario-login p {
     text-align: center;
 }
-.formulario-login input{
-    margin:0 auto;
+
+.formulario-login input {
+    margin: 0 auto;
     background-color: #eeeeee;
     width: 100%;
     margin-bottom: 20px;
     padding: 7px;
     box-sizing: border-box;
     font-size: 15px;
-    border:none;
+    border: none;
 }
 
-.informacion_login{
+.informacion_login {
     background-color: #3f3f3f;
 }
 
-.body-login{
-    background-image: url(img/tayikistan-montanas.png)  ;
+.body-login {
+    background-image: url(img/tayikistan-montanas.png);
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
-    width:100% ;
+    width: 100%;
     background-attachment: fixed;
     background-size: cover;
 }
 
-/*GALERIA DE IMAGENES*/
+                                                                              /*GALERIA DE IMAGENES*/
 
-.galeria-column img{
+.galeria-column img {
     width: 100%;
     margin-top: 5px;
 }
 
-.galeria-row{
+.galeria-row {
     display: flex;
+    width: 100%;
     padding: 5px;
 
 }
 
-.galeria-column{
+.galeria-column {
     flex: 25%;
     padding: 5px;
 
 }
 
+/*VISTA DE ADMINISTRADOR*/
+
+
+.ad-contenedor-img {
+    width: 100%;
+    max-width: 1800px;
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.vista-img {
+    text-align: center;
+    padding: 2px;
+}
+
+.ad-contenedor-img .vista-img img {
+    width: 450px;
+    height: 380px;
+    border: 2px solid black;
+}
