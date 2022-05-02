@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" >  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
+    
+
+    <title>Tickets</title>
+</head>
+<body id="prueba">
+    <header >
+       
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../quienesSomos.html">Quienes somos</a></li>
+                <li><a href="../galeria.html">Galeria de imagenes</a></li>
+                <li><a href="../contactenos.html">Contactenos</a></li>
+                <li><a href="../login.html"></a></li>
+                <li><a href="../index.html">Cerrar Sesión</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+    <h1 id="h">Tickets</h1>
+
+    <div class="contenedor-con">
+                
+            
+            <div class="formulario">
+            
+                <h2>Crea un ticket</h2>
+                <br>
+                <br>
+
+                <form action="form" method="POST">
+                    <input type="text" name="txt_nombreIntegrante" id="txt_nombreIntegrante" placeholder="Nombre del integrante:" required>
+                    <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo del ticket: ">
+                    <input type="text" name="txt_directiva" id="txt_directiva" placeholder="Directiva: ">
+                    <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Observacion" required="required"></textarea>
+
+                    <input type="submit" value="enviar" id="btn_enviar">
+                </form>
+                
+                
+            </div>
+            <div class="der">
+                <h2>Información de contacto</h2>
+                <p><span class="material-icons-outlined">location_on</span> Los Fresnos, San Pedro, Rancagua, O'Higgins 
+                    <br><br>
+                    <span class="material-icons-outlined">call</span> Telefono. +569 38526985 
+                    <br><br>
+                    <span class="material-icons-outlined">email</span> Administracion@gmail.com 
+                    <br><br> 
+                    <span class="material-icons-outlined">email</span> asistente@gmail.com</p>
+           
+            </div>
+    </div>
+    
+</body>
+</html>
