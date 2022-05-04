@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../stilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" >  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
     <link rel="icon" href="img/barrio-01-2048x2031.png">
 
-
-
-    <title>Sign Up</title>
+    <title>Login</title>
 </head>
-<body class="body-login"">
 
-    <header >
-       
+<body class="body-login">
+    <header>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,31 +25,29 @@
                 <li><a href="galeria.html">Galeria de imagenes</a></li>
                 <li><a href="contactenos.html">Contactenos</a></li>
                 <li><a href="login.html">Log In</a></li>
-                <li><a href="#">Sign Up</a></li>
-               
+                <li><a href="signUp.html">Sign Up</a></li>
+
             </ul>
         </nav>
     </header>
 
-    <section class="contenedor_login">
-        <div class="formulario-login">
-            <form action="" method="POST">
-                <h2>Sign Up</h2>
+    <div class="contenedor_login">
+        <section class="formulario-login">
+            <form action="vistas/vistaAdmin.html" method="POST">
+                <h2>Formulario Login</h2>
                 <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre: ">
-                <input type="email" name="txt_correo" id="txt_correo" placeholder="Correo Electronico">
                 <input type="password" name="txt_password" id="txt_password" placeholder="Contraseña: ">
-                <input type="password" name="txt_password_confirmacion" id="txt_password_confirmacion" placeholder="Confirme su Contraseña: ">
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Acceder">
                 <p><a href="#">¿Olvidaste tu contraseña?</a></p>
-                <p><a href="signUp.html">¿Ya estás logeado? Iniciar sesión</a></p>
+                <p><a href="signUp.html">¿No estás logeado? Crear Cuenta</a></p>
             </form>
-    
-        </div>
+
+        </section>
         <section class="informacion_login">
             <h2></h2>
 
         </section>
-    </section>
+    </div>
 
     <footer>
         <div class="grupoUno">
@@ -59,13 +56,15 @@
                     <a href="#">
                         <img src="" alt="No se encuentra la imagen del logo">
                     </a>
-                    
+
                 </figure>
             </div>
             <div class="box">
                 <h2>Sobre nosotros</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt magnam optio nesciunt a aspernatur dolorum tenetur, beatae dolor magni. Accusantium asperiores nam iste quo tempore error dolores eligendi enim dolor!</p>
-                
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt magnam optio nesciunt a aspernatur
+                    dolorum tenetur, beatae dolor magni. Accusantium asperiores nam iste quo tempore error dolores
+                    eligendi enim dolor!</p>
+
             </div>
             <div class="box">
                 <h2>Siguenos en nuestras redes sociales</h2>
@@ -82,6 +81,6 @@
 
 
 
-    
 </body>
+
 </html>

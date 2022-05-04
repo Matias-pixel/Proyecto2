@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    background-image: url(../img/tayikistan-montanas.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.contenedor-con div {
+    border: 1px solid black;
+}
+
+.contenedor-con {
+
+    width: 100%;
+
+    max-width: 1000px;
+    margin: 1.5em auto;
+    padding-top: 30px;
+
+    display: grid;
+    gap: 0.5em;
+
+    grid-template-columns: 60% 40%;
+    grid-template-rows: auto auto;
+
+}
+
+.formulario {
+    background-color: white;
+    height: 800px;
+    padding: 15px;
+    
+}
+
+
+
+.formulario h2 {
+    text-align: center;
+}
+
+.formulario input,
+textarea {
+
+    
+    background-color: #eeeeee;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+
+    font-size: 15px;
+    border: none;
+}
+
+.formulario textarea {
+    min-height: 170px;
+    max-height: 170px;
+    min-width: 100%;
+    max-width: 100%;
+
+}
+
+#btn_enviar {
+    background-color: white;
+    border-color: black;
+    color: orange;
+    border: 1px solid black;
+    width: 15%;
+    border-radius: 5px;
+
+
+
+}
+
+#btn_enviar:hover {
+
+    background-color: yellow;
+    color: black;
+    transition: all 0.5s ease;
+}
+
+
+.contenedor-con .der {
+    background-color: #3f3f3f;
+    padding: 20px;
+    color: antiquewhite;
+}
+
+
+
+#h {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#prueba {
+    background-image: url(img/tayikistan-montanas.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.der {
+    height: 580px;
+}
+
+.der p {
+    padding-top: 20px;
+}
+
+
