@@ -115,7 +115,7 @@ body {
     flex-direction: column;
 }
 
-/*                                                                                 index        */
+/*                                                                                 seccion de noticias       */
 
 .contenedor {
     background-color: white;
@@ -155,7 +155,7 @@ body {
 }
 
 .contenido article {
-    background-color: aqua;
+    
     padding: 20px;
     margin-top: 5px;
 
@@ -268,7 +268,7 @@ textarea {
 }
 
 #prueba {
-    background-image: url(img/tayikistan-montanas.png);
+    background-image: url(../img/tayikistan-montanas.png);
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
@@ -330,7 +330,7 @@ textarea {
 }
 
 .contenedor_imagenes {
-    background-image: url(img/backgroundGray.jpg);
+    background-image: url(../img/backgroundGray.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     height: 100%;
@@ -405,17 +405,6 @@ textarea {
 .informacion_login {
     background-color: #3f3f3f;
 }
-
-.body-login {
-    background-image: url(img/tayikistan-montanas.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
                                                                               /*GALERIA DE IMAGENES*/
 
 .galeria-column img {
@@ -452,3 +441,6 @@ textarea {
     border: 3px solid black;
     border-radius: 5px;
 }
+
+
+
