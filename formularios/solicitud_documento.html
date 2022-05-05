@@ -17,7 +17,7 @@
 
 <body id="prueba">
 
-    <h1 id="h">Documento a solicitar</h1>
+    <h1 id="h">Solicitar Documento</h1>
 
     <div class="contenedor-con">
 
@@ -26,19 +26,19 @@
 
             <h2>Solicita un documento</h2>
             <br>
-            <br>
-
             <form action="form" method="POST">
-                <input type="text" name="txt_rut" id="txt_rut" placeholder="Ingresa tu RUT" required>
-                <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre del que retira: ">
-                <input type="text" name="txt_documento" id="txt_documento" placeholder="Tipo de documento  (Obligatorio)" required>
+                <input type="text" name="txt_rut" id="txt_rut" placeholder="Ingresa tu RUT:" required>
+                <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre del que retira: " required>
+                <label for="estados">Tipo de documento solicitado:</label>
+                <select name="estados" id="estados" optionlist="autocomplete" required>
+                    <option></option>
+                    <option>Solicitud</option>
+                    <option>Prestamo</option>
+                    <option>Reunión</option>
+                </select>
                 <input type="text" name="txt_documentoFolio" id="txt_documentoFolio" placeholder="Folio del documento ">
                 <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Añada un comentario" required="required"></textarea>
-                
-                
-
-                <br>
-                <input type="submit" value="enviar" id="btn_enviar">
+                <input type="submit" value="enviar">
             </form>
 
 

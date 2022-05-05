@@ -38,7 +38,7 @@ body{
 
 .formulario {
     background-color: white;
-    height: 950px;
+    height: 980px;
     padding: 15px;
     
 }
@@ -69,36 +69,34 @@ body{
     font-size: 15px;
 }
 
-
-
-
-.formulario textarea {
-    min-height: 170px;
-    max-height: 170px;
-    min-width: 100%;
-    max-width: 100%;
-
-}
-
 .formulario input[type="submit"] {
+    width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: .7rem;
+    border-radius: 2rem;
     background-color: white;
-    border-color: black;
-    color: orange;
-    border: 1px solid black;
-    width: 15%;
-    border-radius: 5px;
-
-
-
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
 }
 
 .formulario input[type="submit"]:hover {
-
-    background-color: yellow;
-    color: black;
+    width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: #f8942c;
     transition: all 0.5s ease;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
 }
-
 
 .contenedor-con .der {
     background-color: #3f3f3f;
@@ -113,18 +111,8 @@ body{
     text-align: center;
 }
 
-#prueba {
-    background-image: url(img/tayikistan-montanas.png);
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 100%;
-    width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-}
-
 .der {
-    height: 950px;
+    height: 980px;
 }
 
 .der p {

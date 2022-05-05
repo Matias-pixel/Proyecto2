@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,50 +8,57 @@
     <link rel="stylesheet" href="../stilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" >  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
-    
+
 
     <title>Noticias</title>
 </head>
+
 <body id="prueba">
 
     <h1 id="h">Noticia</h1>
 
     <div class="contenedor-con">
-                
-            
-            <div class="formulario">
-            
-                <h2>Ingrese la noticia</h2>
-                <br>
-                <br>
-
-                <form action="form" method="POST">
-                    <input type="text" name="txt_tituloNoticia" id="txt_tituloNoticia" placeholder="Titulo de la noticia" required>
 
 
-                    <input type="text" name="txt_tipoNoticia" id="txt_tipoNoticia" placeholder="Tipo de noticia: " required>
-                    <input type="datetime-local" name="fecha-hora" id="fecha-hora">
-                    <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Noticia" required="required"></textarea>
+        <div class="formulario">
 
-                    <input type="submit" value="enviar" id="btn_enviar">
-                </form>
-                
-                
-            </div>
-            <div class="der">
-                <h2 style="text-align: center;">Contactanos</h2>
-                <p><span class="material-icons-outlined">location_on</span> Los Fresnos, San Pedro, Rancagua, O'Higgins 
-                    <br><br>
-                    <span class="material-icons-outlined">call</span> Telefono. +569 38526985 
-                    <br><br>
-                    <span class="material-icons-outlined">email</span> Administracion@gmail.com 
-                    <br><br> 
-                    <span class="material-icons-outlined">email</span> asistente@gmail.com</p>
-           
-            </div>
+            <h2>Ingrese la noticia</h2>
+            <br>
+            <br>
+
+            <form action="form" method="POST">
+                <input type="text" name="txt_tituloNoticia" id="txt_tituloNoticia" placeholder="Titulo de la noticia:"
+                    required>
+
+
+                <input type="text" name="txt_tipoNoticia" id="txt_tipoNoticia" placeholder="Tipo de noticia: " required>
+                <label for="fecha-hora">Fecha de la noticia:</label>
+                <br><br>
+                <input type="datetime-local" name="fecha-hora" id="fecha-hora">
+                <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Noticia"
+                    required="required"></textarea>
+
+                <input type="submit" value="enviar" id="btn_enviar">
+            </form>
+
+
+        </div>
+        <div class="der">
+            <h2 style="text-align: center;">Contactanos</h2>
+            <p><span class="material-icons-outlined">location_on</span> Los Fresnos, San Pedro, Rancagua, O'Higgins
+                <br><br>
+                <span class="material-icons-outlined">call</span> Telefono. +569 38526985
+                <br><br>
+                <span class="material-icons-outlined">email</span> Administracion@gmail.com
+                <br><br>
+                <span class="material-icons-outlined">email</span> asistente@gmail.com
+            </p>
+
+        </div>
     </div>
-    
+
 </body>
+
 </html>

@@ -118,39 +118,52 @@ body {
 /*                                                                                 seccion de noticias       */
 
 .contenedor {
-    background-color: white;
+    
     width: 90%;
-    max-width: 1500px;
+    max-width: 1300px;
     margin: 0.5em auto;
-
+    align-items: center;
+    background: url(../img/back2.svg) no-repeat;
+    background-size: cover;
+    background-position:center ;
     display: grid;
     gap: 0.5em;
 
     grid-template-columns: repeat(5, 1fr);
 }
 
+.aside img{
+    width: 350px;
+    height: 210px;
+}
+
+.relacionados img{
+    width: 300px;
+    height: 250px;
+}
+
 
 .contenedor div,
 .contenedor .contenido,
 .contenedor .aside {
-    background: #fff;
+    
     padding: 20px;
-    border: 1px solid black;
+
 }
 
 .contenedor .contenido {
-    grid-column: span 3;
+    grid-column: span 6;
 }
 
 .contenedor .aside {
-    grid-column: span 2;
+    grid-column: span 6;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    
 }
 
-.contenido h1 {
+.contenido h2 {
     text-align: center;
 }
 
@@ -213,45 +226,25 @@ body {
     text-align: center;
 }
 
-.formulario input,
-textarea {
+.formulario input, textarea, select {
 
     margin: 0 auto;
     background-color: #eeeeee;
     width: 100%;
     margin-bottom: 20px;
     padding: 8px;
-
     font-size: 15px;
     border: none;
 }
 
 .formulario textarea {
-    min-height: 170px;
-    max-height: 170px;
+    min-height: 130px;
+    max-height: 130px;
     min-width: 100%;
     max-width: 100%;
 
 }
 
-#btn_enviar {
-    background-color: white;
-    border-color: black;
-    color: orange;
-    border: 1px solid black;
-    width: 15%;
-    border-radius: 5px;
-
-
-
-}
-
-#btn_enviar:hover {
-
-    background-color: yellow;
-    color: black;
-    transition: all 0.5s ease;
-}
 
 
 .contenedor-con .der {
@@ -466,6 +459,21 @@ textarea {
     padding: .7rem;
     border-radius: 2rem;
     background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+}
+
+.formulario input[type="submit"]:hover {
+    width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: #f8942c;
+    transition: all 0.5s ease;
     font-weight: 600;
     margin-top: 3rem;
     font-size: .8rem;
