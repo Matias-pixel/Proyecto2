@@ -442,5 +442,38 @@ textarea {
     border-radius: 5px;
 }
 
+.contenedor-vista-general{
+    display: flex;
+    
+}
+
+.ad{
+    width: 50%;
+    padding: 12px;
+
+    text-align: center;
+}
+
+.ve{
+    width: 50%;
+    padding: 12px;
+}
+
+.formulario input[type="submit"] {
+    width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: .7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+}
+
+
+
 
 
