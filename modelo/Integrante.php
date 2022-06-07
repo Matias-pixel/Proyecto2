@@ -6,8 +6,8 @@
         private $apellido;
         private $fechaNacimiento;
         private $estadoCivil;
-        private $numeroContacto
-        private $correoElectronico
+        private $numeroContacto;
+        private $correoElectronico;
         private $sexo;
         private $etnia;
         private $ocupacion;
@@ -32,6 +32,7 @@
             $this->estadoUsuario = $estadoUsuario;
 
         }
+        
 
         public function getRut(){
             return $this->rut;
@@ -50,7 +51,7 @@
         }
 
         public function getEstadoCivil(){
-            return $this->?$estadoCivil;
+            return $this->estadoCivil;
         }
 
         public function getNumeroContacto(){
@@ -140,6 +141,7 @@
 
 
     }
+    
     
 
 ?>

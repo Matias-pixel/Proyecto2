@@ -1,3 +1,24 @@
+
+<?php
+    if(isset($_REQUEST["btn_enviar"])){
+        $correo = $_REQUEST["txt_nombre"];
+        $contra = $_REQUEST["pws_contra"];
+
+        if ($correo == "matias" && $contra == "123" ) {
+            # code...
+            header("location: ../vistas/vistaAdmin.html");
+        }else {
+            # code...
+            # ventana emergente con JS
+            
+        }
+        
+    }else{
+        echo "";
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +49,7 @@
                     <li><a href="quienesSomos.html">Quienes somos</a></li>
                     <li><a href="galeria.html">Galeria de imagenes</a></li>
                     <li><a href="contactenos.html">Contactenos</a></li>
-                    <li><a href="login.html">Registro - Iniciar sesion</a></li>
+                    <li><a href="login.php">Registro - Iniciar sesion</a></li>
     
     
                 </ul>
@@ -67,7 +88,9 @@
         </section>
     
         <section class="container-form sign-in">
-            <form class="formulario" action="../vistas/vistaGeneral.html" method="POST">
+            <form class="formulario" method="POST">
+                
+            
                 
                 <h2 class="create-account">Iniciar Sesion</h2>
                 <div class="iconos">
@@ -81,10 +104,10 @@
                         <i class='bx bxl-facebook-circle'></i>
                     </div>
                 </div>
-                <p class="cuenta-gratis">Ingrese sus credenciales</p>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
-                <input type="submit" value="Enviar">
+                <p class="cuenta-gratis">Ingrese sus credencialesss</p>
+                <input type="text" name="txt_nombre"  id="name" placeholder="Nombre" >
+                <input type="password" name="pws_contra" id="pass" placeholder="Contraseña" >
+                <input type="submit" value="Enviar" name="btn_enviar">
             </form>
             <div class="welcome-back">
                 <div class="message">
