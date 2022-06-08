@@ -18,7 +18,7 @@
             if($correo == "111-1"){
                 header("location: ../vistas/vistaGeneral.html");
                 
-
+                // Comentario de push
 
             }elseif($correo == $valor){
                 header("location: ../vistas/vistaAdmin.html");
