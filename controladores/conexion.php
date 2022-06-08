@@ -6,10 +6,13 @@ function conectar(){
     $pass = "";
     $server = "localhost";
     $db = "juntavecinos";
-    $con = mysqli_conect($server,$user,$pass) or die ("E R R O R".mysql_error());
-    mysql_select_db($db, $con);
 
-    return $con; 
+    $conex = new msqli($server,$user,$pass,$db);
+
+    if($conex->connect_errno){
+        die("FALLO NO PUEDE SER ALO".$conex->connect_errno);
+    }
+
 
 }
 

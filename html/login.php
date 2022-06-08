@@ -1,5 +1,9 @@
 <?php
+    error_reporting(0);
     require "../modelo/Integrante.php";
+    include("../controladores/conexion.php");
+  
+    echo "buenas conexcion";
     	
     session_start();
   
