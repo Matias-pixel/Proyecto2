@@ -1,20 +1,40 @@
-
 <?php
+    require "../modelo/Integrante.php";
+    	
+    session_start();
+  
+    $integrantes = array();
+  
+    $integrantes = $_SESSION["integrantes"];
+   
     if(isset($_REQUEST["btn_enviar"])){
-        $correo = $_REQUEST["txt_nombre"];
+        $correo = $_REQUEST["txt_rut"];
         $contra = $_REQUEST["pws_contra"];
 
-        if ($correo == "matias" && $contra == "123" ) {
-            # code...
-            header("location: ../vistas/vistaAdmin.html");
-        }else {
-            # code...
-            # ventana emergente con JS
-            
-        }
         
-    }else{
-        echo "";
+
+        foreach($integrantes as $valor){
+
+            if($correo == "111-1"){
+                header("location: ../vistas/vistaGeneral.html");
+                
+
+
+            }elseif($correo == $valor){
+                header("location: ../vistas/vistaAdmin.html");
+
+
+
+            }elseif ($correo == $valor) {
+                header("location: ../vistas/vistaV.html");
+            }
+
+
+
+
+        }
+            
+     
     }
 
 
@@ -88,7 +108,7 @@
         </section>
     
         <section class="container-form sign-in">
-            <form class="formulario" method="POST">
+            <form class="formulario" action="login.php" method="POST">
                 
             
                 
@@ -105,7 +125,7 @@
                     </div>
                 </div>
                 <p class="cuenta-gratis">Ingrese sus credencialesss</p>
-                <input type="text" name="txt_nombre"  id="name" placeholder="Nombre" >
+                <input type="text" name="txt_rut"  id="name" placeholder="Rut" >
                 <input type="password" name="pws_contra" id="pass" placeholder="Contraseña" >
                 <input type="submit" value="Enviar" name="btn_enviar">
             </form>

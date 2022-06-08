@@ -14,8 +14,9 @@
         private $discapacidad;
         private $socio;
         private $estadoUsuario;
+        private $rol;
 
-        public function __construct($rut,$apellido,$nombre,$fechaNacimiento,$estadoCivil,$numeroContacto,$correoElectronico,$sexo,$etnia,$ocupacion,$discapacidad,$socio,$estadoUsuario){
+        public function __construct($rut,$nombre,$apellido,$fechaNacimiento,$estadoCivil,$numeroContacto,$correoElectronico,$sexo,$etnia,$ocupacion,$discapacidad,$socio,$estadoUsuario,$rol){
 
             $this->rut = $rut;
             $this->nombre = $nombre;
@@ -30,6 +31,7 @@
             $this->discapacidad = $discapacidad;
             $this->socio = $socio;
             $this->estadoUsuario = $estadoUsuario;
+            $this->rol = $rol;
 
         }
         
@@ -136,6 +138,14 @@
 
         public function setEtadoU($estadoUsuario){
             $this->estadoUsuario = $estadoUsuario;
+        }
+
+        public function getRol(){
+            return $this->rol;
+        }
+
+        public function setRol($rol){
+            $this->rol = $rol;
         }
 
 

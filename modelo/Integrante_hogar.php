@@ -8,13 +8,13 @@
         private $id_hogar_fk;
         private $estado_integrante_hogar;
 
-        private function __construct($id,$id_integrante_fk,$tipo_integrante,$parentesco_integrante,$id_hogar_fk,$estado_integrante_hogar){
+        public function __construct($id,$tipo_integrante,$parentesco_integrante,$id_hogar_fk,$estado_integrante_hogar,$id_integrante_fk){
             $this->id = $id;
-            $this->id_integrante_fk = $id_integrante_fk;
             $this->tipo_integrante = $tipo_integrante;
             $this->parentesco_integrante = $parentesco_integrante;
             $this->id_hogar_fk = $id_hogar_fk;
             $this->estado_integrante = $estado_integrante_hogar;
+            $this->id_integrante_fk = $id_integrante_fk;
 
 
         }

@@ -1,3 +1,27 @@
+<?php 
+    require "../modelo/Hogar.php";
+   if(isset($_REQUEST["btn_crear"])){
+        $nombre = $_REQUEST["_nombre_calle"];
+        $numeracion = $_REQUEST["_numeracion"];
+        
+
+        
+        $hogar = new Hogar(1,$nombre,$numeracion,1);
+
+        session_start();
+
+        array_push($_SESSION["hogares"],$hogar);
+
+        print_r($_SESSION['hogares']);
+
+    
+
+
+   }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +49,18 @@
             <h2>Crea un hogar</h2>
                 <br>
                 <br>
-            <form action="" method="POST">
-                <input type="text" name="nombre_calle" id="nombre_calle" placeholder="Nombre de la calle:">
-                <input type="text" name="numeracion" id="numeracion" placeholder="Numeración del hogar:">
-                <input type="text" name="sector" id="sector" placeholder="Sector del hogar:">
-                <br><br><br><br><br><br><br><br><br><br>
-                <input type="submit" value="Crear hogar">
+            <form action="hogar.php" method="POST">
+                <input type="text" name="_nombre_calle" id="nombre_calle" placeholder="Nombre de la calle:">
+                <input type="text" name="_numeracion" id="numeracion" placeholder="Numeración del hogar:">
+                <label for="sector">Sector:</label>
+                <select name="_sector" id="sector" >
+                    <option value=""></option>
+                    <option value="sur">Sur</option>
+                    <option value="norte">Norte</option>
+                    <option value="centro">Centro</option>
+                </select>
+                <br><br><br><br><br><br><br><br><br>
+                <input type="submit" name="btn_crear" value="Crear hogar">
             </form>
             
             

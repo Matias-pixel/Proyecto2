@@ -6,7 +6,7 @@
         private $numeracion;
         private $id_sector;
 
-        private function __construct($id,$calle,$numeracion,$id_sector){
+        public function __construct($id,$calle,$numeracion,$id_sector){
             $this->id = $id;
             $this->calle = $calle;
             $this->numeracion = $numeracion;
