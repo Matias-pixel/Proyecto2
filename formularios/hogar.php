@@ -22,14 +22,25 @@
 
         try {
             //code...
-            $sql = "INSERT INTO hogar VALUES (null,'$nombre','$numeracion',now(),1,'$rial')";
-            if($conex->query($sql) === true){
-                echo "datos insertados correctamente";
-    
+            $sql2 = "SELECT COUNT(id) FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion'";
+            $cont = current($conex->query($sql2)->fetch_assoc());
+        
+            if ($cont>0) {
+                echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
+
             }else{
-                die('error al insetar datos en la tabla hogar' . $conex->error);
+                $sql = "INSERT INTO hogar VALUES (null,'$nombre','$numeracion',now(),1,'$rial')";
+                if($conex->query($sql) === true){
+                    echo "datos insertados correctamente";
+                }else{
+                    die('error al insetar datos en la tabla hogar' . $conex->error);
+                }
+                $conex->close();
+
             }
-            $conex->close();
+
+
+            
         } catch (\Throwable $th) {
             echo "Error: Algo salio mal, ERROR ----> " . $th->getMessage();
         }

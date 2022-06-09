@@ -16,11 +16,17 @@
         if($row['rut'] == $rut && $row['password'] == $contra){
             $_SESSION['nombre'] = $rut;
             header("location: ../vistas/vistaGeneral.html");
+           
         }else{
-            header("location: ../html/login.php");
+           header("location: ../html/login.php");
         }
 
+
+        
+
+        
     }
+
 
   
 

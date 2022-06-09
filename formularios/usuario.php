@@ -92,7 +92,15 @@
                 <input type="email" name="_correo" id="correo" pattern=".+@gmail\.com" placeholder="Correo electrónico:" required>
                 <input type="password" name="_pass" id="pass" placeholder="contraseña" required>
                 <input type="text" name="_etnia" id="etnia" placeholder="Etnia:">
-                <input type="text" name="_ocupacion" id="ocupacion" placeholder="Ocupación del integrante:">
+                <label for="ocupacion">Seleccione la ocupacion del integrante:</label>
+                <select name="_ocupacion" id="ocupacion" required>
+                    <option value="ninguna"></option>
+                    <option value="d_casa">Dueña/o de casa</option>
+                    <option value="estudiante">Estudiante</option>
+                    <option value="t_dependiente">Trabajador dependiente</option>
+                    <option value="t_independiente">Trabajador independiente</option>
+                    <option value="cesante">Cesante</option>
+                </select>
                 <label for="discapacidad">Discapacidad:</label>
                 <select name="_discapacidad" id="discapacidad" optionlist="autocomplete" required>
                     <option value="ninguna">Ninguna</option>
