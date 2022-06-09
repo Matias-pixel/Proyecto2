@@ -15,7 +15,15 @@
 
         if($row['rut'] == $rut && $row['password'] == $contra){
             $_SESSION['nombre'] = $rut;
-            header("location: ../vistas/vistaGeneral.html");
+            $rol = $row['rol'];
+            if ($rol == "presidente") {
+                header("location: ../vistas/vistaGeneral.html");
+            }elseif($rol == "secretario" || $rol == "tesorero" ){
+                header("location: ../vistas/vistaAdmin.html");
+            }elseif($rol == "vecino"){
+                header("location: ../vistas/vistaV.html");
+            }
+
            
         }else{
            header("location: ../html/login.php");

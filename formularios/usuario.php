@@ -14,11 +14,12 @@
         $contra = $_REQUEST["_pass"];
         $etnia = $_REQUEST["_etnia"];
         $ocupacion = $_REQUEST["_ocupacion"];
+        $rol = $_REQUEST["_rol"];
         $discapacidad = $_REQUEST["_discapacidad"];
         $vota = $_REQUEST["_habilitado"];
         try {
             //code...
-            $sql = "INSERT INTO usuario VALUES (null,'$rut','$nombre','$apellido','$f_nacimiento','$estado_civil','$numero','$correo','$contra','$sexo','$etnia','$ocupacion','$discapacidad','$vota',1)";
+            $sql = "INSERT INTO usuario VALUES (null,'$rut','$nombre','$apellido','$f_nacimiento','$estado_civil','$numero','$correo','$contra','$sexo','$etnia','$ocupacion','$rol','$discapacidad','$vota',1)";
         
             if($conex->query($sql) === true){
                 echo "datos insertados correctamente";
@@ -100,6 +101,16 @@
                     <option value="t_dependiente">Trabajador dependiente</option>
                     <option value="t_independiente">Trabajador independiente</option>
                     <option value="cesante">Cesante</option>
+                </select>
+                <label for="rol">Seleccione el Rol del usuario (SOLO PARA LA DEMOSTRACION)</label>
+                <select name="_rol" id="rol" required>
+                    <option value="ninguno"></option>
+                    <option value="presidente">Presidente</option>
+                    <option value="secretario">Secretario</option>
+                    <option value="tesorero">Tesorero</option>
+                    <option value="vecino">Vecino</option>
+
+
                 </select>
                 <label for="discapacidad">Discapacidad:</label>
                 <select name="_discapacidad" id="discapacidad" optionlist="autocomplete" required>
