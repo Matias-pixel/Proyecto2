@@ -1,0 +1,111 @@
+CREATE TABLE comuna(
+    id int(11) PRIMARY KEY AUTO_INCREMENT,
+    nombre varchar(20),
+    region varchar(20),
+    estado bit
+
+
+);
+
+CREATE TABLE sector(
+	id int primary key AUTO_INCREMENT,
+    nombre varchar(20),
+    estado bit, 
+    comuna_id_fk int,
+    
+   FOREIGN KEY (comuna_id_fk) REFERENCES comuna(id)
+);
+
+
+CREATE TABLE hogar(
+	id int AUTO_INCREMENT PRIMARY KEY,
+    calle varchar(30),
+    numeracion varchar(30),
+    f_creacion datetime,
+    estado bit,
+    sector_id_fk int,
+    
+    FOREIGN KEY(sector_id_fk) REFERENCES sector(id)
+);
+
+
+
+
+
+create table usuario(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    rut varchar(12) UNIQUE,
+    nombre varchar(20),
+    apellido varchar(20),
+    f_nacimiento date,
+    e_civil varchar (20),
+    numero varchar (20),
+    correo varchar (50),
+    sexo varchar (10),
+    etnia varchar (15),
+    ocupacion varchar (20),
+    rol varchar(30),
+    discapacidad varchar (20),
+    socio varchar(20),
+    estado bit
+    
+
+);
+
+CREATE TABLE cargo_directivo(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    cargo varchar(20),
+    f_inicio date,
+    f_termino date,
+    estado bit,
+    usuario_rut_fk int,
+    
+    FOREIGN KEY (usuario_rut_fk) REFERENCES usuario(id)
+
+);
+
+
+
+CREATE TABLE integrante_hogar(
+	id int AUTO_INCREMENT PRIMARY KEY,
+	tipo_integrante varchar(30),
+	parentesco_integrante varchar(30),
+	f_registro date,
+	estado bit,
+	
+	usuario_id_fk int,
+	hogar_id_fk int,
+	
+	FOREIGN KEY(usuario_id_fk) REFERENCES usuario(id),
+	FOREIGN KEY(hogar_id_fk) REFERENCES hogar(id)
+
+);
+
+
+INSERT
+
+COMUNA
+
+INSERT INTO comuna VALUES (null,"comuna1","sexta",1);
+INSERT INTO comuna VALUES (null,"comuna2","quinta",1);
+INSERT INTO comuna VALUES (null,"comuna3","sexta",1);
+
+SECTOR
+INSERT INTO sector VALUES (null,"central",1,1);
+INSERT INTO sector VALUES (null,"sur",1,2);
+INSERT INTO sector VALUES (null,"norte",1,3);
+
+USUARIO
+
+INSERT INTO usuario VALUES (null,'admin','admin','Admin',now(),'soltero','+569 77143248','admin@gmail.com','admin','masculino','ninguna','serAdmin','presidente','ninguna','no',1);
+
+
+SELECT count(integrante_hogar.id) 
+FROM hogar
+INNER JOIN integrante_hogar ON hogar.id = integrante_hogar.hogar_id_fk
+INNER JOIN usuario ON integrante_hogar.usuario_id_fk = usuario.id
+WHERE usuario.id = '16';
+
+
+INSERT INTO integrante_hogar VALUES (null,'jefe','hijo',now(),1,15,6);
+
