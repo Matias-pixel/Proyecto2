@@ -1,20 +1,17 @@
 <?php
-
-function conectar(){
-
     $user = "root";
     $pass = "";
     $server = "localhost";
-    $db = "juntavecinos";
+    $db = "provar";
 
-    $conex = new msqli($server,$user,$pass,$db);
+    $conex = new mysqli($server,$user,$pass,$db);
 
-    if($conex->connect_errno){
-        die("FALLO NO PUEDE SER ALO".$conex->connect_errno);
+    if($conex->connect_error){
+        die("FALLO NO PUEDE SER ALO".$conex->connect_error);
     }
 
 
-}
+
 
 
 ?>

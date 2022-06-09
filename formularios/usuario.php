@@ -1,5 +1,6 @@
 <?php
-    require "../modelo/Integrante.php";
+    
+    include("../controladores/conexion.php");
     
     if(isset($_REQUEST["btn_enviar"])){
         $rut = $_REQUEST["_rut"];
@@ -15,19 +16,22 @@
         $ocupacion = $_REQUEST["_ocupacion"];
         $discapacidad = $_REQUEST["_discapacidad"];
         $vota = $_REQUEST["_habilitado"];
-
-        $usuario = new Integrante($rut,$nombre,$apellido,$f_nacimiento,$sexo,$estado_civil, $numero,$correo,$contra,$etnia, $ocupacion,$discapacidad,$vota,"vecino");
+        try {
+            //code...
+            $sql = "INSERT INTO usuario VALUES (null,'$rut','$nombre','$apellido','$f_nacimiento','$estado_civil','$numero','$correo','$contra','$sexo','$etnia','$ocupacion','$discapacidad','$vota',1)";
         
-        session_start();
-        
-
-        array_push($_SESSION["integrantes"],$usuario);
-
-        
-
-        print_r($_SESSION["integrantes"]);
-
+            if($conex->query($sql) === true){
+                echo "datos insertados correctamente";
     
+            }else{
+                die('error al insetar datos en la tabla usuario' . $conex->error);
+            }
+            $conex->close();
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo "Error: El rut ingresado probablemente ya se encuentra registrado, ERROR ----> " . $th->getMessage();
+        }
+       
     }
     
 

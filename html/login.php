@@ -1,9 +1,9 @@
 <?php
     error_reporting(0);
     require "../modelo/Integrante.php";
-    include("../controladores/conexion.php");
+    
   
-    echo "buenas conexcion";
+
     	
     session_start();
   
@@ -112,7 +112,7 @@
         </section>
     
         <section class="container-form sign-in">
-            <form class="formulario" action="login.php" method="POST">
+            <form class="formulario" action="../controladores/validacion.php" method="POST">
                 
             
                 
