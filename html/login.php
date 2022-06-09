@@ -1,48 +1,4 @@
-<?php
-    error_reporting(0);
-    require "../modelo/Integrante.php";
-    
-  
 
-    	
-    session_start();
-  
-    $integrantes = array();
-  
-    $integrantes = $_SESSION["integrantes"];
-   
-    if(isset($_REQUEST["btn_enviar"])){
-        $correo = $_REQUEST["txt_rut"];
-        $contra = $_REQUEST["pws_contra"];
-
-        
-
-        foreach($integrantes as $valor){
-
-            if($correo == "111-1"){
-                header("location: ../vistas/vistaGeneral.html");
-                
-                // Comentario de push
-
-            }elseif($correo == $valor){
-                header("location: ../vistas/vistaAdmin.html");
-
-
-
-            }elseif ($correo == $valor) {
-                header("location: ../vistas/vistaV.html");
-            }
-
-
-
-
-        }
-            
-     
-    }
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 

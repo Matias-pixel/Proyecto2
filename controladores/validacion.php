@@ -14,13 +14,16 @@
         $row = $resultado->fetch_assoc();
 
         if($row['rut'] == $rut && $row['password'] == $contra){
-            $_SESSION['nombre'] = $rut;
+            
             $rol = $row['rol'];
             if ($rol == "presidente") {
                 header("location: ../vistas/vistaGeneral.html");
             }elseif($rol == "secretario" || $rol == "tesorero" ){
                 header("location: ../vistas/vistaAdmin.html");
             }elseif($rol == "vecino"){
+                $_SESSION['rut'] = $rut;
+                
+
                 header("location: ../vistas/vistaV.html");
             }
 
