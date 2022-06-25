@@ -109,3 +109,34 @@ WHERE usuario.id = '16';
 
 INSERT INTO integrante_hogar VALUES (null,'jefe','hijo',now(),1,15,6);
 
+
+
+NO TENGO IDEA
+
+
+
+CREATE TABLE observacion(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    comentario varchar(120),
+    fecha_hora datetime,
+   	ticket_id_fk int,
+    estado bit,
+    FOREIGN KEY (ticket_id_fk) REFERENCES ticket(id)
+);
+
+
+CREATE TABLE ticket(
+	id int AUTO_INCREMENT PRIMARY KEY,
+    nombre varchar(30),
+    motivo varchar(30),
+    fecha_hora datetime,
+    estado_ticket bit,
+    
+  	integrante_id_fk int,
+    
+    FOREIGN KEY(integrante_id_fk) REFERENCES usuario(id)
+    
+    
+
+
+);

@@ -1,3 +1,25 @@
+<?php
+    require '../DAO/TipoDocumento.php';
+    $con = new DaoTipoDocumento();
+
+    if(isset($_REQUEST["btn_crear"])){
+        $nombre = $_REQUEST["_nombre_tipo"];
+        $numero = $con->contar($nombre);
+        
+        if($numero < 1){
+            $con->insertar($nombre);
+            echo "Tipo de documento ingresado correctamente";
+        }else{
+            echo "No voy a ingresar";
+        }
+
+        
+
+    }
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +48,11 @@
                 <br>
                 <br>
 
-                <form action="form" method="POST">
-                    <input type="text" name="txt_tipoSoli" id="txt_tipoSoli" placeholder="Tipo de documento:" required>
+                <form action="tipo_documento.php" method="POST"">
+                    <input type="text" name="_nombre_tipo" id="txt_tipoSoli" placeholder="Tipo de documento:" required>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <input type="submit" value="Crear">
+
+                    <input type="submit" name = "btn_crear" value="Crear">
            
 
 

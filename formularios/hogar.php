@@ -1,50 +1,8 @@
 <?php 
-    require "../modelo/Hogar.php";
-    include("../controladores/conexion.php");
+
     if(isset($_REQUEST["btn_crear"])){
 
-        $nombre = $_REQUEST["_nombre_calle"];
-        $numeracion = $_REQUEST["_numeracion"];
-        $sector = $_REQUEST["_sector"];
-
-        $rial;
-
-        if ($_REQUEST["_sector"] === "sur") {
-            # code...
-            $rial = 2;
-        }elseif ($_REQUEST["_sector"] === "norte") {
-            # code...
-            $rial = 3;
-        }elseif ($_REQUEST["_sector"] === "centro") {
-            # code...
-            $rial = 1;
-        }
-
-        try {
-            //code...
-            $sql2 = "SELECT COUNT(id) FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion'";
-            $cont = current($conex->query($sql2)->fetch_assoc());
-        
-            if ($cont>0) {
-                echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
-
-            }else{
-                $sql = "INSERT INTO hogar VALUES (null,'$nombre','$numeracion',now(),1,'$rial')";
-                if($conex->query($sql) === true){
-                    echo "datos insertados correctamente";
-                }else{
-                    die('error al insetar datos en la tabla hogar' . $conex->error);
-                }
-                $conex->close();
-
-            }
-
-
-            
-        } catch (\Throwable $th) {
-            echo "Error: Algo salio mal, ERROR ----> " . $th->getMessage();
-        }
-
+       
     }
 
 
@@ -81,11 +39,17 @@
                 <input type="text" name="_nombre_calle" id="nombre_calle" placeholder="Nombre de la calle:" required>
                 <input type="text" name="_numeracion" id="numeracion" placeholder="Numeración del hogar:" required>
                 <label for="sector">Sector:</label >
+                
                 <select name="_sector" id="sector" required>
-                    <option value=""></option>
-                    <option value="sur">Sur</option>
-                    <option value="norte">Norte</option>
-                    <option value="centro">Centro</option>
+                    
+
+
+
+
+
+
+
+
                 </select>
                 <br><br><br><br><br><br><br><br><br>
                 <input type="submit" name="btn_crear" value="Crear hogar">

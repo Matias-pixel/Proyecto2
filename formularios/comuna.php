@@ -1,3 +1,22 @@
+<?php
+    require '../DAO/comuna.php';
+    $con = new DaoComuna();
+
+    if(isset($_REQUEST["btn_ingresar"])){
+        $nombre = $_REQUEST["_nombre_usuario"];
+        $region = $_REQUEST["_region_comuna"];
+        
+
+        $numero = $con->contar($nombre,$region);
+        if($numero < 1){
+            $con->insertarComuna($nombre,$region);
+        }else{
+            echo "No voy a ingresar";
+        }
+
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +42,11 @@
             <h2>Crea una comuna</h2>
                 <br>
                 <br>
-            <form action="" method="POST">
-                <input type="text" name="nombre_usuario" id="nombre_usuario" placeholder="Nombre de la comuna">
-                <input type="text" name="region_comuna" id="region_comuna" placeholder="Región de la comuna:">
+            <form action="comuna.php" method="POST">
+                <input type="text" name="_nombre_usuario" id="nombre_usuario" placeholder="Nombre de la comuna" required>
+                <input type="text" name="_region_comuna" id="region_comuna" placeholder="Región de la comuna:" required>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <input type="submit" value="Crear comuna">
+                <input type="submit" name="btn_ingresar" value="Crear comuna">
             </form>
             
             

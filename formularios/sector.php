@@ -1,3 +1,19 @@
+<?php
+    require '../DAO/sector.php';
+    $con = new DaoSector();
+    if(isset($_REQUEST['btn_enviar'])){
+        $nombre = $_REQUEST["name"];
+        $id_comuna_fk = $_REQUEST['_comuna_fk'];
+
+        $con->IngresarSector($nombre,$id_comuna_fk);
+
+
+        
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,11 +40,34 @@
             <h2>Crea un sector</h2>
                 <br>
                 <br>
-            <form action="" method="POST">
-                <input type="text" name="nombre_comuna" id="nombre_comuna" placeholder="Nombre del sector:">
-                <input type="text" name="comuna" id="comuna" placeholder="Comuna del sector:">
+            <form action="sector.php" method="POST">
+                <input type="text" name="name" id="nombre_sector" placeholder="Nombre del sector:" required>
+                
+                <label for="_comuna_fk">Seleccione la comuna del sector:</label>
+                <select name="_comuna_fk" id="comuna_fk" required>
+                    <option value=""></option>
+
+                
+              
+                <?php
+                    include '../DAO/conexion.php';
+                    $sql = "SELECT id,nombre,region FROM comuna WHERE estado = 1 ORDER BY id";
+                    $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
+                    
+                ?>
+                <?php
+                    foreach ($obtener as $opciones) {
+                        ?>
+                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']." de la región: ".$opciones['region']?></option>
+                        <?php
+                    }
+                    ?>
+
+                ?>
+
+                </select>
                 <br><br><br><br><br><br><br><br><br><br><br><br>
-                <input  id="btn_enviar" type="submit" value="Crear sector">
+                <input  name="btn_enviar" type="submit" value="Crear sector">
             </form>
             
             
