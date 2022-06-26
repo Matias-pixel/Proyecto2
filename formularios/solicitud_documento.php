@@ -1,3 +1,22 @@
+<?php
+    require '../DAO/solicitud_documento.php';
+    $con = new DaoSolicitudDocumento();
+    if(isset($_REQUEST['btn_enviar'])){
+        $retira = $_REQUEST['txt_nombre'];
+        $tipo = $_REQUEST['tipo_documento'];
+        $folio = $_REQUEST['txt_documentoFolio'];
+        $comentario = $_REQUEST['txt_comentario'];
+        $tipo_documento = $_REQUEST['tipo_documento'];
+
+        session_start();
+       
+        $con->ingresarSolicitud($comentario,$folio,$retira,$_SESSION['integrante'],$tipo);
+        session_abort();
+
+
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,19 +45,30 @@
 
             <h2>Solicita un documento</h2>
             <br>
-            <form action="form" method="POST">
-                <input type="text" name="txt_rut" id="txt_rut" placeholder="Ingresa tu RUT:" required>
+            <form action="solicitud_documento.php" method="POST">
                 <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre del que retira: " required>
                 <label for="estados">Tipo de documento solicitado:</label>
-                <select name="estados" id="estados" optionlist="autocomplete" required>
-                    <option></option>
-                    <option>Solicitud</option>
-                    <option>Prestamo</option>
-                    <option>Reunión</option>
+                <select name="tipo_documento" id="estados" required>
+                    <option value=""></option>
+                    <?php
+                     include '../DAO/conexion.php';
+                     $sql = "SELECT id,nombre FROM tipo_documento WHERE estado = 1 ORDER BY id";
+                     $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
+
+                    ?>
+
+                    <?php
+                        foreach ($obtener as $opciones) {
+                                            ?>
+                            <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']?></option>       
+                            <?php
+                        }
+
+                    ?>
                 </select>
                 <input type="text" name="txt_documentoFolio" id="txt_documentoFolio" placeholder="Folio del documento ">
                 <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Añada un comentario" required="required"></textarea>
-                <input type="submit" value="enviar">
+                <input type="submit" value="enviar" name="btn_enviar">
             </form>
 
 

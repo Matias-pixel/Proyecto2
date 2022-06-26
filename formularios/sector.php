@@ -53,17 +53,17 @@
                     include '../DAO/conexion.php';
                     $sql = "SELECT id,nombre,region FROM comuna WHERE estado = 1 ORDER BY id";
                     $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
-                    
                 ?>
                 <?php
                     foreach ($obtener as $opciones) {
                         ?>
                         <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']." de la región: ".$opciones['region']?></option>
+                      
                         <?php
                     }
-                    ?>
-
                 ?>
+
+                
 
                 </select>
                 <br><br><br><br><br><br><br><br><br><br><br><br>

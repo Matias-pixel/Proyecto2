@@ -1,3 +1,25 @@
+<?php
+    require '../DAO/ticket.php';
+    $con = new DaoTicket();
+    if(isset($_REQUEST["btn_enviar"])){
+        $nombre = $_REQUEST['_nombre_ticket'];
+        $motivo = $_REQUEST['txt_motivo'];
+        
+
+        session_start();
+        $_SESSION['integrante'] = 16;
+
+        $con->insertarTicket($nombre,$motivo,$_SESSION["integrante"]); 
+
+        
+        
+        
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,14 +48,15 @@
                 <br>
                 <br>
 
-                <form action="form" method="POST">
-                    <input type="text" name="txt_nombreIntegrante" id="txt_nombreIntegrante" placeholder="Nombre del integrante:" required>
-                    <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo del ticket: ">
-                    <input type="text" name="txt_directiva" id="txt_directiva" placeholder="Directiva: ">
-                    <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Observación:" required="required"></textarea>
-                    <br><br>
+                <form action="ticket.php" method="POST">
+                   <input type="text" name="_nombre_ticket" placeholder="Nombre del ticket" required>
+                   <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo del ticket: " required>
+                    
+                    
+                    <br><br><br><br><br><br><br><br><br><br><br><br>
 
-                    <input type="submit" value="enviar" id="btn_enviar">
+                    <input type="submit" value="enviar" id="btn_enviar" name="btn_enviar">
+                   
                 </form>
                 
                 

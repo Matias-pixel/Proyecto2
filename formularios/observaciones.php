@@ -1,3 +1,11 @@
+<?php
+    if(isset($_REQUEST["btn_subir"])){
+        $texto = $_REQUEST["txt_comentario"];
+        
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>

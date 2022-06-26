@@ -34,6 +34,15 @@
         }
        }
 
+       public function ingresarNoticia($titulo,$tipo,$cuerpo,$usuario){
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        $stml = $this->conexion->prepare("INSERT INTO noticia (titulo,tipo,fecha_hora,cuerpo,estado,usuario_id_fk) VALUES (?,?,?,?,?,?)");
+        $stml->bind_param("ssssii", $titulo,$tipo,$hora,$cuerpo,$estado,$usuario);
+        $estado= 1;
+        $hora = date('Y-n-d H:i:s');
+        $stml->execute();
+       }
+
 
     
 
