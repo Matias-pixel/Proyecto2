@@ -28,6 +28,29 @@ CREATE TABLE hogar(
     FOREIGN KEY(sector_id_fk) REFERENCES sector(id)
 );
 
+CREATE TABLE cargo_directivo(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    nombre_cargo varchar(40),
+    fecha_inicio datetime,
+    estado bit
+
+
+
+);
+
+CREATE TABLE acta_reunion(
+    id int AUTO_INCREMENT PRIMARY key,
+    titulo_acta varchar(30),
+    razon_reunion varchar(30),
+    fecha_acta datetime,
+
+    cargo_directivo_id_fk int,
+
+    FOREIGN KEY(cargo_directivo_id_fk) REFERENCES cargo_directivo(id)
+
+
+);
+
 
 
 
@@ -44,25 +67,40 @@ create table usuario(
     sexo varchar (10),
     etnia varchar (15),
     ocupacion varchar (20),
-    rol varchar(30),
     discapacidad varchar (20),
     socio varchar(20),
-    estado bit
-    
-
-);
-
-CREATE TABLE cargo_directivo(
-    id int AUTO_INCREMENT PRIMARY KEY,
-    cargo varchar(20),
-    f_inicio date,
-    f_termino date,
+    rol varchar(50),
     estado bit,
-    usuario_rut_fk int,
+    estado_usuario bit,
+
+    cargo_directivo_id_fk int,
+
+    FOREIGN KEY(cargo_directivo_id_fk) REFERENCES cargo_directivo(id)
     
-    FOREIGN KEY (usuario_rut_fk) REFERENCES usuario(id)
 
 );
+
+INSERT
+usuario
+INSERT INTO usuario VALUES (null,'111-1','matías','marchant',now(),'soltero','+569 77143248','matias@gmail.com','masculino','ninguna','serAdmin','ninguna','no','amo y señór del hogar',1,0,1);
+
+
+cargo date
+
+INSERT INTO cargo_directivo VALUES(null,"vecino",now(),1);
+
+CONSULTA INNER JOIN
+SELECT usuario.nombre, cargo_directivo.nombre_cargo, acta_reunion.titulo_acta
+FROM usuario
+INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
+INNER JOIN acta_reunion on acta_reunion.cargo_directivo_id_fk = cargo_directivo.id;
+
+SELECT usuario.nombre AS 'HOLA', cargo_directivo.nombre_cargo, acta_reunion.titulo_acta
+FROM usuario
+INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
+INNER JOIN acta_reunion on acta_reunion.cargo_directivo_id_fk = cargo_directivo.id
+WHERE cargo_directivo.id= 1;
+
 
 
 
@@ -82,18 +120,7 @@ CREATE TABLE integrante_hogar(
 );
 
 
-INSERT
 
-COMUNA
-
-INSERT INTO comuna VALUES (null,"comuna1","sexta",1);
-INSERT INTO comuna VALUES (null,"comuna2","quinta",1);
-INSERT INTO comuna VALUES (null,"comuna3","sexta",1);
-
-SECTOR
-INSERT INTO sector VALUES (null,"central",1,1);
-INSERT INTO sector VALUES (null,"sur",1,2);
-INSERT INTO sector VALUES (null,"norte",1,3);
 
 USUARIO
 
@@ -111,7 +138,7 @@ INSERT INTO integrante_hogar VALUES (null,'jefe','hijo',now(),1,15,6);
 
 
 
-NO TENGO IDEA
+
 
 
 

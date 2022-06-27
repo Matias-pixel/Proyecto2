@@ -102,16 +102,6 @@
                     <option value="t_independiente">Trabajador independiente</option>
                     <option value="cesante">Cesante</option>
                 </select>
-                <label for="rol">Seleccione el Rol del usuario (SOLO PARA LA DEMOSTRACION)</label>
-                <select name="_rol" id="rol" required>
-                    <option value="ninguno"></option>
-                    <option value="presidente">Presidente</option>
-                    <option value="secretario">Secretario</option>
-                    <option value="tesorero">Tesorero</option>
-                    <option value="vecino">Vecino</option>
-
-
-                </select>
                 <label for="discapacidad">Discapacidad:</label>
                 <select name="_discapacidad" id="discapacidad" optionlist="autocomplete" required>
                     <option value="ninguna">Ninguna</option>

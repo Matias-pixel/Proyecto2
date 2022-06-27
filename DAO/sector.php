@@ -4,7 +4,7 @@
        private $user = "root";
        private $pass = "";
        private $server = "localhost";
-       private $db = "provar";
+       private $db = "junta2";
        private $conexion;
 
        //CONSTRUCTOR VACIO

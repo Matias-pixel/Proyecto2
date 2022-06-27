@@ -7,7 +7,7 @@
         
 
         session_start();
-        $_SESSION['integrante'] = 16;
+        $_SESSION['integrante'] = 1 ;
 
         $con->insertarTicket($nombre,$motivo,$_SESSION["integrante"]); 
 

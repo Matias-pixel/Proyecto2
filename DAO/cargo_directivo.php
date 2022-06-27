@@ -1,5 +1,5 @@
 <?php
-    class DaoComuna{
+    class DaoCargo_directivo{
        private $user = "root";
        private $pass = "";
        private $server = "localhost";
@@ -35,34 +35,20 @@
         }
        }
 
-       public function insertarComuna($nombre,$region){
+       public function insertarCargo($nombre){
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
-        $stml = $this->conexion->prepare("INSERT INTO comuna (nombre,region,estado) VALUES (?,?,?)");
-        $stml->bind_param("ssi",$nombre,$region,$estado);
+        $stml = $this->conexion->prepare("INSERT INTO acta_reunion (nombre_cargo,fecha_inicio,fecha_fin,estado) VALUES (?,?,?,?)");
+        $stml->bind_param("sssi",$nombre,$hora,$null,$estado);
         $estado= 1;
+        $hora = date('Y-n-d H:i:s');
+        $null = NULL;
         $stml->execute();
     
        }
 
-       public function contar($name,$region){
-        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
-        $hay;
-        if (!$this->conexion){
-            echo "Error al conectarse";
-        }else{
-          $sql = "SELECT * FROM comuna WHERE nombre = '$name' AND region = '$region'";
-          $contador = mysqli_query($this->conexion,$sql);
 
-          if(mysqli_num_rows($contador)>0){
-            $hay=1;
-          }else{
-            $hay=0;
-          }
-          return $hay;
-          
-        }
-       }
-        
+
     }
+
 
 ?>

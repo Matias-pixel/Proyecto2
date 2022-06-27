@@ -1,3 +1,26 @@
+<?php
+    require '../DAO/acta_reunion.php';
+    $con = new DaoActaReunion();
+    if(isset($_REQUEST['btn_enviar'])){
+        $nombre = $_REQUEST['titulo'];
+        $tipo_reunion = $_REQUEST['_tipo_reunion'];
+        $razon = $_REQUEST['razon'];
+        session_start();
+        $directivo = $_SESSION['integrante'];
+        echo  $directivo;
+       
+        $fecha = $_REQUEST['fecha_acta'];
+
+        $con->insertarActa($nombre,$tipo_reunion,$razon,$fecha,$directivo);
+        session_abort();
+        
+        
+
+
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,16 +46,16 @@
             <h2>Crea un acta de reunión</h2>
                 <br>
                 <br>
-            <form action="" method="POST">
+            <form action="acta_reunion.php" method="POST">
                 <input type="text" name="titulo" id="titulo" placeholder="Titulo del acta:">
-                <input type="text" name="Tipo" id="Tipo" placeholder="Tipo de reunión:">
-                <input type="text" name="directivo" id="directivo" placeholder="directivo:">
+                <input type="text" name="_tipo_reunion" id="tipo" placeholder="Ingrese el tipo de reunion">
+                <textarea name="razon" id="" cols="30" rows="10"></textarea>
                 <label for="fecha_acta">Fecha del acta:</label>
+                <br>
+                <input type="datetime-local" name="fecha_acta" id="fecha_acta" placeholder="fecha acta">
                 <br><br>
-                <input type="date" name="fecha_acta" id="fecha_acta" placeholder="fecha acta">
-                <br><br><br><br><br><br>
 
-                <input type="submit" value="Crear acta">
+                <input type="submit" value="Crear acta" name="btn_enviar">
             </form>
             
             

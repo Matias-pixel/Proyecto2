@@ -1,3 +1,17 @@
+<?php
+    require '../DAO/cargo_directivo.php';
+    $con = new DaoCargo_directivo();
+    if(isset($_REQUEST['btn_enviar'])){
+        $nombre = $_REQUEST['nombre_cargo'];
+        $con->insertarCargo($nombre);
+        
+
+
+    }
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,33 +21,34 @@
     <link rel="stylesheet" href="../stilos/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" >  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined">
 
     
     <title>Formulario Cargo Directivo</title>
 </head>
-<body>
-    <h2>Formulario de Cargo Directivo</h2>
-    <div class="contenedor-usuario">
+<body id="prueba">
+    <h1 id="h">Cargo Directivo</h1>
+
+
+    <div class="contenedor-con">
+        
                 
        
 
-        <div class="formulario-usuario">
-            <form action="" method="POST">
-                <input type="text" name="integrante_d" id="integrante_d" placeholder="Integrante">
-                <input type="text" name="cargo" id="cargo" placeholder="Cargo">
-                Fecha Inicio
-                <input type="date" name="f_ini" id="f_ini">
-                Fecha Final
-                <input type="date" name="f_fn" id="f_fn">
+        <div class="formulario">
+            <h2>Ingrese el cargo</h2>
+            <br>
+            <form action="cargo_directivo.php" method="POST">
+                <input type="text" name="nombre_cargo" id="cargo" placeholder="Ingrese el nombre del cargo" required>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-                <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar" name="btn_enviar">
             </form>
             
             
         </div>
-        <div class="der_usuario">
+        <div class="der">
             <h2>Información de contacto</h2>
             <p><span class="material-icons-outlined">location_on</span> Los Fresnos, San Pedro, Rancagua, O'Higgins 
                 <br><br>
@@ -44,7 +59,7 @@
                 <span class="material-icons-outlined">email</span> asistente@gmail.com</p>
        
         </div>
-</div>
+    </div>
     
 </body>
 </html>

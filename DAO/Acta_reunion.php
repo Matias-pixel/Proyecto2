@@ -3,7 +3,7 @@
        private $user = "root";
        private $pass = "";
        private $server = "localhost";
-       private $db = "provar";
+       private $db = "junta2";
 
        //CONSTRUCTOR VACIO
 
@@ -34,6 +34,14 @@
         }
        }
 
+        public function insertarActa($titulo,$tipo,$razon,$fecha,$cargo){
+            $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+            $stml = $this->conexion->prepare("INSERT INTO acta_reunion (titulo_acta,tipo,razon_reunion,fecha_acta,estado,cargo_directivo_id_fk) VALUES (?,?,?,?,?,?)");
+            $stml->bind_param("ssssii",$titulo,$tipo,$razon,$fecha,$estado,$cargo);
+            $estado= 1;
+            $stml->execute();
+    
+       }
 
     
 
