@@ -31,14 +31,14 @@ body{
     gap: 0.5em;
 
     grid-template-columns: 60% 40%;
-    grid-template-rows: 500px 500px;
-    
+    grid-template-rows: 700px 500px;
+    background-color: red;
 
 }
 
 .formulario {
     background-color: white;
-    height: 980px;
+    height: 1500px;
     padding: 15px;
     
 }

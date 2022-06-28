@@ -7,7 +7,6 @@
         $razon = $_REQUEST['razon'];
         session_start();
         $directivo = $_SESSION['integrante'];
-        echo  $directivo;
        
         $fecha = $_REQUEST['fecha_acta'];
 

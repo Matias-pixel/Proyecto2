@@ -20,14 +20,14 @@
         <nav>
             <ul>
                 <li><a href="../formularios/"></a></li>
-                <li><a href="../formularios/solicitud_documento.html" target="iframe-carga">Solicitar documento</a></li>
-                <li><a href="../formularios/sector.html" target="iframe-carga">Sector</a></li>
-                <li><a href="../formularios/comuna.html" target="iframe-carga">Comuna</a></li>
-                <li><a href="../formularios/acta_reunion.html" target="iframe-carga">Actas de reunión</a></li>
+                <li><a href="../formularios/solicitud_documento.php" target="iframe-carga">Solicitar documento</a></li>
+                <li><a href="../formularios/sector.php" target="iframe-carga">Sector</a></li>
+                <li><a href="../formularios/comuna.php" target="iframe-carga">Comuna</a></li>
+                <li><a href="../formularios/acta_reunion.php" target="iframe-carga">Actas de reunión</a></li>
                 <li><a href="../formularios/tipo_documento.php" target="iframe-carga">Tipo de documento</a></li>
                
-                <li><a href="../formularios/noticia.html" target="iframe-carga">Noticia</a></li>
-                <li><a href="../formularios/ticket.html" target="iframe-carga">Ticket</a></li>
+                <li><a href="../formularios/noticia.php" target="iframe-carga">Noticia</a></li>
+                <li><a href="../formularios/ticket.php" target="iframe-carga">Ticket</a></li>
                 <li><a href="../formularios/usuario.php" target="iframe-carga">Integrante</a></li>
                 <li><a href="../html/seccionNoticias.html">Cerrar sesión</a></li>
                

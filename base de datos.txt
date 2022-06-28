@@ -1,3 +1,6 @@
+CREATE DATABASE junta2;
+use junta2;
+
 CREATE TABLE comuna(
     id int(11) PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(20),
@@ -32,11 +35,18 @@ CREATE TABLE cargo_directivo(
     id int PRIMARY KEY AUTO_INCREMENT,
     nombre_cargo varchar(40),
     fecha_inicio datetime,
+    decha_fin datetime,
     estado bit
 
 
 
 );
+
+INSERT INTO cargo_directivo VALUES ('vecino', now(),NULL,1);
+
+INSERT INTO cargo_directivo VALUES ('administrador', now(),NULL,1);
+
+
 
 CREATE TABLE acta_reunion(
     id int AUTO_INCREMENT PRIMARY key,

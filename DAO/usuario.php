@@ -1,5 +1,5 @@
 <?php
-    class DaoCargo_directivo{
+    class DaoUsuario{
        private $user = "root";
        private $pass = "";
        private $server = "localhost";
@@ -35,13 +35,13 @@
         }
        }
 
-       public function insertarCargo($nombre){
+       public function insertarUsuario($rut,$contra,$nombre,$apellido,$nacimiento,$civil,$numero,$correo,$sexo,$etnia,$ocupacion,$discapacidad,$vota){
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
-        $stml = $this->conexion->prepare("INSERT INTO cargo_directivo (nombre_cargo,fecha_inicio,fecha_fin,estado) VALUES (?,?,?,?)");
-        $stml->bind_param("sssi",$nombre,$hora,$null,$estado);
+        $stml = $this->conexion->prepare("INSERT INTO usuario (rut,contrasena,nombre,apellido,f_nacimiento,e_civil,numero,correo,sexo,etnia,ocupacion,discapacidad,estado,estado_usuario,vota,cargo_directivo_id_fk) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stml->bind_param("ssssssssssssiisi",$rut,$contra,$nombre,$apellido,$nacimiento,$civil,$numero,$correo,$sexo,$etnia,$ocupacion,$discapacidad,$estado,$estado_usuario,$vota,$cargo_directivo);
         $estado= 1;
-        $hora = date('Y-n-d H:i:s');
-        $null = NULL;
+        $cargo_directivo = 1;
+        $estado_usuario = 0;
         $stml->execute();
     
        }

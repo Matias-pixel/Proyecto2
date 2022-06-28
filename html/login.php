@@ -46,7 +46,7 @@
                     <button class="sign-up-btn">Iniciar Sesion</button>
                 </div>
             </div>
-            <form class="formulario">
+            <form class="formulario" action='../formularios/usuario.php'>
                 <h2 class="create-account">Crear una cuenta</h2>
                 <div class="iconos">
                     <div class="border-icon">
@@ -60,17 +60,12 @@
                     </div>
                 </div>
                 <p class="cuenta-gratis">Crear una cuenta gratis</p>
-                <input type="text" placeholder="Nombre">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
                 <input type="submit" value="Registrarse">
             </form>
         </section>
     
         <section class="container-form sign-in">
             <form class="formulario" action="../controladores/validacion.php" method="POST">
-                
-            
                 
                 <h2 class="create-account">Iniciar Sesion</h2>
                 <div class="iconos">
