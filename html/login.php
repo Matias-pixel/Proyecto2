@@ -46,7 +46,7 @@
                     <button class="sign-up-btn">Iniciar Sesion</button>
                 </div>
             </div>
-            <form class="formulario" action='../formularios/usuario.php'>
+            <form class="formulario" action='registrar.php'>
                 <h2 class="create-account">Crear una cuenta</h2>
                 <div class="iconos">
                     <div class="border-icon">

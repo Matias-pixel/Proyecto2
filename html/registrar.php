@@ -19,8 +19,8 @@
         $vota = $_REQUEST["_habilitado"];
 
         try {
-            $con->insertarUsuario($rut,$contra,$nombre,$apellido,$f_nacimiento,$estado_civil,$numero,$correo,$sexo,$etnia,$ocupacion,$discapacidad,$vota) ; 
-            echo 'Usuario creado correctamente';
+            $con->insertarUsuario($rut,$contra,$nombre,$apellido,$f_nacimiento,$estado_civil,$numero,$correo,$sexo,$etnia,$ocupacion,$discapacidad,$vota); 
+            header("location: ../html/login.php");
         } catch (\Throwable $th) {
             die('El usuario ingresado ya se encuentra registrado');
         }
@@ -55,7 +55,7 @@
         <div class="formulario">
             <h2>Creacion de Usuario</h2>
             
-            <form action="usuario.php" method="post">
+            <form action="registrar.php" method="post">
                 <input type="text" name="_rut" id="rut" placeholder="Ingrese el rut del integrante:">
                 <input type="text" name="_nombre_usuario" id="nombre_usuario" placeholder="Nombre del integrante:">
                 <input type="text" name="_apellido_usuario" id="apellido_usuario" placeholder="Apellido del integrante:">
