@@ -30,6 +30,42 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<style>
+        header {
+    background: #f8942c;
+    width: 100%;
+    height: 80px;
+    clear: both;
+    content: '';
+    display: table;
+
+}
+
+nav {
+    font-size: 20px;
+    margin-left: 25px;
+    position: relative;
+    float: right;
+    padding-right: 70px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 70px;
+    padding: 20px 0;
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+
+}
+
+nav ul li a:hover {
+    background-color: wheat;
+}
+</style>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,6 +82,16 @@
 
 </head>
 <body>
+
+        <header>
+
+            <nav>
+                <ul>
+                    <li><a href="login.php">Salir del registro</a></li>
+                </ul>
+            </nav>
+        </header>
+    </section>
 
     <h1 id="h">Formulario de Usuario</h1>
     <div class="contenedor-con">

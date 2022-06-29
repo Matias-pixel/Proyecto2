@@ -1,6 +1,45 @@
 <?php 
-
+    require '../DAO/hogar.php';
+    include("../DAO/conexion.php");
+    $cone = new DaoHogar();
     if(isset($_REQUEST["btn_crear"])){
+        $nombre = $_REQUEST['_nombre_calle'];
+        $numeracion = $_REQUEST['_numeracion'];
+        $sector_id_fk = $_REQUEST['_sector'];
+        $hogar_id_fk;
+
+
+            
+        $existe = "SELECT COUNT(id) FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+        $cont = current($con->query($existe)->fetch_assoc());
+        
+        if ($cont>0) {
+            echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
+
+        }else{
+            $cone->ingresarHogar($nombre,$numeracion,$sector_id_fk);
+            session_start();
+            $cone->cambiarEstado_user($_SESSION['id_integrante']);
+
+            $id = "SELECT id FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+
+            foreach ($id as $opciones) {      
+                $hogar_id_fk = $opciones['id'];
+            }
+
+            $cone->crearHogar_integrante($_SESSION['id_integrante'],$hogar_id_fk);
+            session_abort();
+
+
+        }
+
+
+            
+
+            
+        
+        
+
 
        
     }
@@ -41,15 +80,20 @@
                 <label for="sector">Sector:</label >
                 
                 <select name="_sector" id="sector" required>
-                    
-
-
-
-
-
-
-
-
+                    <option value=""></option>
+                <?php
+                    include '../DAO/conexion.php';
+                    $sql = "SELECT id,nombre FROM sector WHERE estado = 1 ORDER BY id";
+                    $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
+                ?>
+                <?php
+                    foreach ($obtener as $opciones) {
+                        ?>
+                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']?></option>
+                      
+                        <?php
+                    }
+                ?>
                 </select>
                 <br><br><br><br><br><br><br><br><br>
                 <input type="submit" name="btn_crear" value="Crear hogar">

@@ -7,7 +7,7 @@
         #$fecha = $_REQUEST['fecha-hora'];
         $cuerpo = $_REQUEST['txt_comentario'];
         session_start();
-        $usuario_fk = $_SESSION['integrante'];
+        $usuario_fk = $_SESSION['id_integrante'];
         #EL ESTADO SE DA EN DAO 
         #
         $con->ingresarNoticia($titulo,$tipo,$cuerpo,$usuario_fk);

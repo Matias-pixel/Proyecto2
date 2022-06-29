@@ -1,6 +1,8 @@
 CREATE DATABASE junta2;
 use junta2;
 
+
+
 CREATE TABLE comuna(
     id int(11) PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(20),
@@ -88,6 +90,20 @@ create table usuario(
     FOREIGN KEY(cargo_directivo_id_fk) REFERENCES cargo_directivo(id)
     
 
+);
+
+CREATE TABLE integrante_hogar(
+	id int PRIMARY KEY AUTO_INCREMENT,
+    tipo_integrante varchar(30),
+    parentesco_integrante varchar(30),
+	fecha_registro datetime,
+    estado bit,
+    
+    usuario_id_fk int,
+    id_hogar_fk int,
+    
+    FOREIGN KEY(usuario_id_fk) REFERENCES usuario(id),
+    FOREIGN KEY(id_hogar_fk) REFERENCES hogar(id)
 );
 
 INSERT
@@ -193,6 +209,14 @@ CREATE TABLE noticia(
     FOREIGN KEY(usuario_id_fk) REFERENCES usuario(id)
 
      
+
+);
+
+CREATE TABLE tipo_documento(
+    id int primary key AUTO_INCREMENT,
+    nombre varchar(40),
+    estado bit
+
 
 );
 

@@ -6,9 +6,7 @@
         $motivo = $_REQUEST['txt_motivo'];
         
 
-        session_start();
-        $_SESSION['integrante'] = 1 ;
-
+        
         $con->insertarTicket($nombre,$motivo,$_SESSION["integrante"]); 
 
         
