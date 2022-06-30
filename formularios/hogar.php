@@ -26,23 +26,15 @@
 
             $consulta = "SELECT * FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
             $obtener = mysqli_query($con,$consulta) or die(mysql_error($con));
-
             foreach ($obtener as $opciones) {      
                 $hogar_id_fk = $opciones['id'];
             }
+            $conexion->obtener_id_hogar($hogar_id_fk);
             
             $conexion->crearTabla($_SESSION['id_integrante'],$hogar_id_fk);
+
         }
 
-
-            
-
-            
-        
-        
-
-
-       
     }
 
 

@@ -35,12 +35,12 @@ class DaoTicket{
      }
     }
 
-    public function insertarTicket($nombre,$motivo,$integrante){
+    public function insertarTicket($nombre,$motivo,$comentario,$integrante){
 
 
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
-        $stml = $this->conexion->prepare("INSERT INTO ticket (nombre,motivo,fecha_hora,estado_ticket,integrante_id_fk) VALUES (?,?,?,?,?)");
-        $stml->bind_param("ssssi",$nombre,$motivo,$hora,$estado,$integrante);
+        $stml = $this->conexion->prepare("INSERT INTO ticket (nombre,motivo,comentario,fecha_hora,estado_ticket,integrante_id_fk) VALUES (?,?,?,?,?,?)");
+        $stml->bind_param("ssssii",$nombre,$motivo,$comentario,$hora,$estado,$integrante);
         $estado= 1;
         $hora = date('Y-n-d H:i:s');
         $stml->execute();

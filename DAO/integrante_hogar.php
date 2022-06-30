@@ -4,7 +4,7 @@
        private $pass = "";
        private $server = "localhost";
        private $db = "junta2";
-
+       private $id_h;
        //CONSTRUCTOR VACIO
 
        public function __construct(){
@@ -33,6 +33,9 @@
             echo "Desconectado de la BD";
         }
        }
+       public function obtener_id_hogar($id){
+        $id_h = $id;
+       }
 
        public function crearTabla($usuario,$id_hogar){
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
@@ -43,7 +46,20 @@
         $hoy = date("Y-m-d H:i:s"); 
         $estado = 1;
         $stml->execute();
+        $hogar = $id_hogar;
        }
+
+       public function agregarIntegrante($tipo_i,$parentesco,$usuario){
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        $stml = $this->conexion->prepare("INSERT INTO integrante_hogar (tipo_integrante,parentesco_integrante,fecha_registro,estado,usuario_id_fk,id_hogar_fk) VALUES (?,?,?,?,?,?)");
+        $stml->bind_param("sssiii",$tipo_i,$parentesco,$hoy,$estado,$usuario,$id_h);
+        $hoy = date("Y-m-d H:i:s"); 
+
+        $estado = 1;
+        $stml->execute();
+       }
+
+       
 
     
 

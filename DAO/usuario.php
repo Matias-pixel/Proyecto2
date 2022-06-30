@@ -46,6 +46,13 @@
     
        }
 
+       public function cambiarCargo($nombre,$cargo){
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        $stml = $this->conexion->prepare("UPDATE usuario SET cargo_directivo_id_fk = ? where nombre = ?");
+        $stml->bind_param("is",$cargo,$nombre);
+        $stml->execute();
+       }
+
 
 
     }

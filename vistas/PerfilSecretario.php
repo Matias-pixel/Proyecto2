@@ -23,11 +23,16 @@
                 <li><a href="../formularios/solicitud_documento.php" target="iframe-carga">Solicitar documento</a></li>
                 <li><a href="../formularios/sector.php" target="iframe-carga">Sector</a></li>
                 <li><a href="../formularios/comuna.php" target="iframe-carga">Comuna</a></li>
+                <li><a href="../formularios/acta_reunion.php" target="iframe-carga">Actas de reunión</a></li>
                 <li><a href="../formularios/tipo_documento.php" target="iframe-carga">Tipo de documento</a></li>
+                <li><a href="../tablas/verDatos.php" target="iframe-carga">Datos</a></li>
+               
                 <li><a href="../formularios/noticia.php" target="iframe-carga">Noticia</a></li>
                 <li><a href="../formularios/ticket.php" target="iframe-carga">Ticket</a></li>
                 <li><a href="../formularios/cambiar_estado.php" target="iframe-carga">Cambiar cargo</a></li>
+
                 <li><a href="../html/seccionNoticias.html">Cerrar sesión</a></li>
+
                
             </ul>
         </nav>

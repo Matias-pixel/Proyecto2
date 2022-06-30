@@ -19,12 +19,14 @@
             $_SESSION['integrante'] = $rut;
             $_SESSION['id_integrante'] = $row['id'];
             $cargo = $row['cargo_directivo_id_fk'];
-            if ($cargo == "presidente") {
+            if ($cargo == 2) {
                 header("location: ../vistas/PerfilMaestro.html");
-            }elseif($cargo == "secretario" || $cargo == "tesorero" ){
+            }elseif($cargo == 3 ){
                 header("location: ../vistas/PerfilAdministrador.php");
             }elseif($cargo == 1){
                 header("location: ../vistas/PerfilVecino.html");
+            }elseif($cargo == 4){
+                header("location: ../vistas/PerfilSecretario.php");
             }
 
            

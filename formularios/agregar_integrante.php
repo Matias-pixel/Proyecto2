@@ -1,4 +1,16 @@
+<?php
+    require '../DAO/integrante_hogar.php';
+    $con = new DaoIntegrante_Hogar();
 
+    if(isset($_REQUEST['btn_ingresar'])){
+        $integrante = $_REQUEST['_integrante'];
+        $tipo_integrante = $_REQUEST['_tipo_integrante'];
+        $parentesco = $_REQUEST['_parentesco'];
+        session_start();
+
+        $con->agregarIntegrante($tipo_integrante,$parentesco,$integrante,$_SESSION['id_hogar']);
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +36,7 @@
             <h2>Agrega un integrante a tu hogar</h2>
                 <br>
                 <br>
-            <form action="comuna.php" method="POST">
+            <form action="agregar_integrante.php" method="POST">
                 
                 <label for="_integrante">Seleccione el integrante:</label>
                 <select name="_integrante" id="">
@@ -61,7 +73,7 @@
                     <option value="ninguna">Sin relación</option>
                 </select>
                 <br><br><br><br><br><br><br>
-                <input type="submit" name="btn_ingresar" value="Crear comuna">
+                <input type="submit" name="btn_ingresar" value="Agregar integrante">
             </form>
             
             

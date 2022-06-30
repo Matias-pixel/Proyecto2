@@ -1,17 +1,32 @@
 <?php
     require '../DAO/acta_reunion.php';
-    $con = new DaoActaReunion();
+    include '../DAO/conexion.php';
+    $conexion = new DaoActaReunion();
     if(isset($_REQUEST['btn_enviar'])){
         $nombre = $_REQUEST['titulo'];
         $tipo_reunion = $_REQUEST['_tipo_reunion'];
         $razon = $_REQUEST['razon'];
         session_start();
-        $directivo = $_SESSION['integrante'];
-       
         $fecha = $_REQUEST['fecha_acta'];
+        $id=$_SESSION['id_integrante'];
 
-        $con->insertarActa($nombre,$tipo_reunion,$razon,$fecha,$directivo);
-        session_abort();
+        $id_pls;
+       
+
+        $sql = "SELECT SELECT usuario.nombre, cargo_directivo.id
+        FROM usuario
+        INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
+        WHERE usuario.id = '$id'";
+        $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
+  
+        foreach ($obtener as $opciones) {
+            $id_pls = $opciones['cargo_directivo.id'];
+           
+        }
+
+        
+        $conexion->insertarActa($nombre,$tipo_reunion,$razon,$fecha,$id_pls);
+
         
         
 

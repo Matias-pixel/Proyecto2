@@ -3,6 +3,7 @@ use junta2;
 
 
 
+
 CREATE TABLE comuna(
     id int(11) PRIMARY KEY AUTO_INCREMENT,
     nombre varchar(20),
@@ -44,9 +45,10 @@ CREATE TABLE cargo_directivo(
 
 );
 
-INSERT INTO cargo_directivo VALUES ('vecino', now(),NULL,1);
-
-INSERT INTO cargo_directivo VALUES ('administrador', now(),NULL,1);
+INSERT INTO cargo_directivo VALUES (null,'vecino', now(),NULL,1);
+INSERT INTO cargo_directivo VALUES (null,'presidente', now(),NULL,1);
+INSERT INTO cargo_directivo VALUES (null,'secretario', now(),NULL,1);
+INSERT INTO cargo_directivo VALUES (null,'tesorero', now(),NULL,1);
 
 
 
@@ -108,7 +110,13 @@ CREATE TABLE integrante_hogar(
 
 INSERT
 usuario
-INSERT INTO usuario VALUES (null,'111-1','matías','marchant',now(),'soltero','+569 77143248','matias@gmail.com','masculino','ninguna','serAdmin','ninguna','no','amo y señór del hogar',1,0,1);
+INSERT INTO usuario VALUES (null,'111-1','1234','matias','marchant',now(),'soltero','+569 77143248','matiassss@gmail.com','masculino','ninguna','ninguna','visual',1,0,'si',2);
+INSERT INTO usuario VALUES (null,'222-2','12345','jose','arias',now(),'soltero','+569 77143248','matiasss@gmail.com','masculino','ninguna','ninguna','desplazamiento',1,0,'si',3);
+INSERT INTO usuario VALUES (null,'333-3','1234','maximiliano','soto',now(),'soltero','+569 77143248','matiasddd@gmail.com','masculino','ninguna','ninguna','Auditiva',1,0,'no',4);
+INSERT INTO usuario VALUES (null,'444-4','1234','samanta','miranda',now(),'soltero','+569 77143248','matiasasad@gmail.com','femenina','ninguna','ninguna','Auditiva',1,0,'no',1);
+INSERT INTO usuario VALUES (null,'555-5','1234','renata','adios',now(),'soltero','+569 77143248','matiasasd@gmail.com','femenina','ninguna','ninguna','desplazamiento',1,0,'si',1);
+INSERT INTO usuario VALUES (null,'666-6','1234','raul','marchant',now(),'soltero','+569 77143248','matiasasdasf@gmail.com','masculino','ninguna','ninguna','Auditiva',1,0,'no',1);
+INSERT INTO usuario VALUES (null,'777-7','1234','jose','soto',now(),'soltero','+569 77143248','matiasasfasf@gmail.com','masculino','ninguna','ninguna','desplazamiento',1,0,'si',1);
 
 
 cargo date
@@ -227,6 +235,7 @@ CREATE TABLE solicitud_documento(
     comentario varchar(120),
     folio varchar(30),
     nombre_retira varchar(50),
+    estado bit,
     
     usuario_id_fk int,
     tipo_documento_id_fk int,

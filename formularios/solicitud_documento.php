@@ -10,7 +10,7 @@
 
         session_start();
        
-        $con->ingresarSolicitud($comentario,$folio,$retira,$_SESSION['integrante'],$tipo);
+        $con->ingresarSolicitud($comentario,$folio,$retira,$_SESSION['id_integrante'],$tipo);
         session_abort();
 
 

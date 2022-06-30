@@ -4,10 +4,9 @@
     if(isset($_REQUEST["btn_enviar"])){
         $nombre = $_REQUEST['_nombre_ticket'];
         $motivo = $_REQUEST['txt_motivo'];
-        
-
-        
-        $con->insertarTicket($nombre,$motivo,$_SESSION["integrante"]); 
+        $comentario = $_REQUEST['_comentario'];
+        session_start();
+        $con->insertarTicket($nombre,$motivo,$comentario,$_SESSION['id_integrante']); 
 
         
         
@@ -49,9 +48,10 @@
                 <form action="ticket.php" method="POST">
                    <input type="text" name="_nombre_ticket" placeholder="Nombre del ticket" required>
                    <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo del ticket: " required>
+                   <textarea name="_comentario" id="" cols="30" rows="10" placeholder='Ingrese un comentario'></textarea>
                     
                     
-                    <br><br><br><br><br><br><br><br><br><br><br><br>
+                    <br><br><br><br><br><br>
 
                     <input type="submit" value="enviar" id="btn_enviar" name="btn_enviar">
                    

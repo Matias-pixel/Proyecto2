@@ -1,22 +1,3 @@
-<?php
-    require '../DAO/noticia.php';
-    $con = new DaoNoticia();
-    if(isset($_REQUEST['btn_enviar'])){
-        $titulo = $_REQUEST['txt_tituloNoticia'];
-        $tipo = $_REQUEST['txt_tipoNoticia'];
-        #$fecha = $_REQUEST['fecha-hora'];
-        $cuerpo = $_REQUEST['txt_comentario'];
-        session_start();
-        $usuario_fk = $_SESSION['id_integrante'];
-        #EL ESTADO SE DA EN DAO 
-        #
-        $con->ingresarNoticia($titulo,$tipo,$cuerpo,$usuario_fk);
-        session_abort();
-
-
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,17 +29,7 @@
             <br>
 
             <form action="noticia.php" method="POST">
-                <input type="text" name="txt_tituloNoticia" id="txt_tituloNoticia" placeholder="Titulo de la noticia:"
-                    required>
-
-
-                <input type="text" name="txt_tipoNoticia" id="txt_tipoNoticia" placeholder="Tipo de noticia: " required>
-                <!-- <label for="fecha-hora">Fecha de la noticia:</label>
-                <br><br>
-                <input type="datetime-local" name="fecha-hora" id="fecha-hora">--> 
-                <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Noticia" required></textarea>
-                <br><br><br><br><br>
-                <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar">
+                <label for="">Seleccione la noticia</label>
             </form>
 
             <form action="../tablas/tablaNoticia.php">
