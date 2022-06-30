@@ -1,7 +1,10 @@
 <?php 
     require '../DAO/hogar.php';
-    include("../DAO/conexion.php");
     $cone = new DaoHogar();
+    require '../DAO/integrante_hogar.php';
+    $conexion = new DaoIntegrante_Hogar();
+    include '../DAO/conexion.php';
+    
     if(isset($_REQUEST["btn_crear"])){
         $nombre = $_REQUEST['_nombre_calle'];
         $numeracion = $_REQUEST['_numeracion'];
@@ -21,16 +24,14 @@
             session_start();
             $cone->cambiarEstado_user($_SESSION['id_integrante']);
 
-            $id = "SELECT id FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+            $consulta = "SELECT * FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+            $obtener = mysqli_query($con,$consulta) or die(mysql_error($con));
 
-            foreach ($id as $opciones) {      
+            foreach ($obtener as $opciones) {      
                 $hogar_id_fk = $opciones['id'];
             }
-
-            $cone->crearHogar_integrante($_SESSION['id_integrante'],$hogar_id_fk);
-            session_abort();
-
-
+            
+            $conexion->crearTabla($_SESSION['id_integrante'],$hogar_id_fk);
         }
 
 
