@@ -8,7 +8,12 @@
         $parentesco = $_REQUEST['_parentesco'];
         session_start();
 
-        $con->agregarIntegrante($tipo_integrante,$parentesco,$integrante,$_SESSION['id_hogar']);
+       $num = $con->obtener_id_hogar($_SESSION['id_integrante']);
+
+       $con->agregarIntegrante($tipo_integrante,$parentesco,$integrante,$num);
+
+       $con->cambiarEstado($integrante);
+
     }
 ?>
 <!DOCTYPE html>
@@ -39,17 +44,17 @@
             <form action="agregar_integrante.php" method="POST">
                 
                 <label for="_integrante">Seleccione el integrante:</label>
-                <select name="_integrante" id="">
+                <select name="_integrante" id="integrante" required>
                     <option value=""></option>
                     <?php
                     include '../DAO/conexion.php';
-                    $sql = "SELECT id,nombre FROM usuario WHERE estado = 1 and estado_usuario = 0 ORDER BY id";
+                    $sql = "SELECT id,nombre,apellido FROM usuario WHERE estado = 1 and estado_usuario = 0 ORDER BY id";
                     $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
                      ?>
                     <?php
                     foreach ($obtener as $opciones) {
                         ?>
-                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']?></option>
+                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre'].'      '.$opciones['apellido']?></option>
                       
                         <?php
                     }
@@ -57,19 +62,20 @@
                 </select>
                
                 <label for="_tipo_integrante">Seleccione el tipo de integrante:</label> 
-               <select name="_tipo_integrante" id="">
+               <select name="_tipo_integrante" id="" required>
                     <option value=""></option>
-                    <option value="sanguineo">consanguinidad</option>
-                    <option value="legal">Vía legal</option>
+                    <option value="cargaFamiliar">Carga familiar</option>
+                    <option value="transitorio">Transitorio</option>
                 </select>
                
                 <label for="_parentesco">Seleccione el parentesco con respecto al jefe de hogar</label>
-                <select name="_parentesco" id="parentesco">
+                <select name="_parentesco" id="parentesco" required>
                     <option value=""></option>
                     <option value="conyuge">Cónyuge</option>
                     <option value="hijo/a">Hijo/a</option>
                     <option value="padre">Padre</option>
                     <option value="madre">Madre</option>
+                    <option value="otro">otro</option>
                     <option value="ninguna">Sin relación</option>
                 </select>
                 <br><br><br><br><br><br><br>

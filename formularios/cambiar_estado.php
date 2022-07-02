@@ -4,15 +4,6 @@
     if(isset($_REQUEST["btn_enviar"])){
         $nombre = $_REQUEST['_usuario'];
         $cargo = $_REQUEST['_cargo'];
-
-
-        echo $nombre;
-        echo $cargo;
-
-
-        
-
-        
         $con->cambiarCargo($nombre,$cargo); 
 
         echo 'Cargo modificado correctamente';

@@ -72,6 +72,7 @@ CREATE TABLE acta_reunion(
 create table usuario(
     id int PRIMARY KEY AUTO_INCREMENT,
     rut varchar(12) UNIQUE,
+    contrasena varchar (80),
     nombre varchar(20),
     apellido varchar(20),
     f_nacimiento date,
@@ -82,10 +83,9 @@ create table usuario(
     etnia varchar (15),
     ocupacion varchar (20),
     discapacidad varchar (20),
-    socio varchar(20),
-    rol varchar(50),
     estado bit,
     estado_usuario bit,
+    vota varchar (3),
 
     cargo_directivo_id_fk int,
 

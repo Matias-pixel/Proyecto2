@@ -45,7 +45,7 @@ tr:nth-child(even){
 
 tr:hover td{
 	background-color: #fcf6bd ;
-	color: white;
+	color: black;
 }
 
 header {
@@ -71,6 +71,7 @@ nav ul li {
     margin-left: 70px;
     padding: 20px 0;
     float: left;
+	
 }
 
 
