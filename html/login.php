@@ -28,7 +28,7 @@
                     <li><a href="seccionNoticias.html">Noticias</a></li>
                     <li><a href="quienesSomos.html">Quienes somos</a></li>
                     <li><a href="galeria.html">Galeria de imagenes</a></li>
-                    <li><a href="contactenos.html">Contactenos</a></li>
+                    <li><a href="contactenos.php">Contactenos</a></li>
                     <li><a href="login.php">Registro - Iniciar sesion</a></li>
     
     

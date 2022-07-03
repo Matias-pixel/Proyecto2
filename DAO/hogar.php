@@ -50,5 +50,23 @@
         $nuevo = 1;
         $stml->execute();
        }
+
+       public function existe(){
+        session_start();
+
+        $id = $_SESSION['id_integrante'];
+        
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        if(!$this->conexion){
+            die('Error al conectarse');
+        }
+        $sql = "SELECT * FROM integrante_hogar WHERE integrante_if_fk ='$id'";
+        $result = mysqli_query($this->conexion,$sql);
+        
+        if(mysqli_num_rows($result)>0){
+            return 1;
+        }
+    }
+        
     }
 ?>

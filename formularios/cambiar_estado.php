@@ -68,7 +68,7 @@
                     <option value=""></option>
                 <?php
                     include '../DAO/conexion.php';
-                    $sql = "SELECT id,nombre_cargo FROM cargo_directivo WHERE estado = 1 ORDER BY id";
+                    $sql = "SELECT id,nombre_cargo FROM cargo_directivo WHERE nombre_cargo != 'presidente' ORDER BY id";
                     $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
                 ?>
                 <?php

@@ -1,11 +1,19 @@
 <?php
     session_start();
   include("../controladores/conexionTablas.php");
+  require '../DAO/noticia.php';
+  $conexion = new DaoNoticia();
+  $numero = $conexion->existe();
+
+  if($numero > 0){
     $con=conectar();
     $id = $_SESSION['id_integrante'];
     $sql="SELECT * FROM noticia WHERE usuario_id_fk = '$id'";
-    $query=mysqli_query($con, $sql);
-       
+    $query=mysqli_query($con, $sql);    
+  }else{
+    die('No hay datos');
+  }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

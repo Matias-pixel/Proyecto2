@@ -72,18 +72,18 @@ actua como intermediaria entre el usuario y la junta de vecinos
                 <br>
                 <!-- El usuario debe completar este formulario obligatoriamente para que se cumpla el proposito de la pagina-->
                 <!-- Para que el usuario pueda enviar el mensaje a la junta de vecinos debe completar los campos requeridos obligatoriamente (nombre, correo, mensaje)-->
-                <form action="" method="POST">
+                <form action="contactenos.php" method="POST">
                     <input type="text" name="txt_nombre" id="txt_nombre" placeholder="Nombre: (Obligatorio)" required>
 
-                    <input type="email" name="correo" id="correo" pattern=".+@gmail\.com" placeholder="Correo electronico:  (Obligatorio)" required>
+                    <input type="email" name="_correo" id="correo" pattern=".+@gmail\.com" placeholder="Correo electronico:  (Obligatorio)" required>
 
-                    <input type="text" name="txt_motivo" id="txt_motivo" placeholder="Motivo: ">
+    
 
-                    <input type="text" name="txt_asunto" id="txt_asunto" placeholder="Asunto: ">
+                    <input type="text" name="_txt_asunto" id="txt_asunto" placeholder="Asunto: ">
 
                     <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Ingrese su mensaje" required="required"></textarea>
                     <br>
-                    <input type="submit" value="enviar">
+                    <input type="submit" value="enviar" name='btn_enviar'>
                 </form>
                 
                 

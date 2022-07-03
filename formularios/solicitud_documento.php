@@ -68,8 +68,10 @@
                 </select>
                 <input type="text" name="txt_documentoFolio" id="txt_documentoFolio" placeholder="Folio del documento ">
                 <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Añada un comentario" required="required"></textarea>
-                <input type="submit" value="enviar" name="btn_enviar">
+                <input type="submit" value="enviar" name="btn_enviar"> <button onclick="redireccionSolicitud()">Solicitudes</button>
             </form>
+            
+            
 
 
         </div>
@@ -86,6 +88,8 @@
 
         </div>
     </div>
+<script src="../js/redireccion.js"></script>
+
 
 </body>
 

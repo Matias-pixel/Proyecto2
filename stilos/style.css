@@ -456,9 +456,39 @@ body {
     width: 30%;
     margin: auto;
     border: solid thin black;
-    padding: .7rem;
+    padding: 0.7rem;
     border-radius: 2rem;
     background-color: white;
+    font-weight: 600px;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+}
+
+button{
+    width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+    
+}
+
+button:hover{
+        width: 30%;
+    margin: auto;
+    border: solid thin black;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: #f8942c;
+    transition: all 0.5s ease;
     font-weight: 600;
     margin-top: 3rem;
     font-size: .8rem;

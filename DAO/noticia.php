@@ -43,6 +43,23 @@
         $stml->execute();
        }
 
+       public function existe(){
+    
+
+        $id = $_SESSION['id_integrante'];
+        
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        if(!$this->conexion){
+            die('Error al conectarse');
+        }
+        $sql = "SELECT * FROM noticia WHERE usuario_id_fk ='$id'";
+        $result = mysqli_query($this->conexion,$sql);
+        
+        if(mysqli_num_rows($result)>0){
+            return 1;
+        }
+    }
+
 
     
 

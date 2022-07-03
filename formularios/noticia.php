@@ -32,6 +32,7 @@
 
 
     <title>Noticias</title>
+    
 </head>
 
 <body id="prueba">
@@ -58,12 +59,13 @@
                 <input type="datetime-local" name="fecha-hora" id="fecha-hora">--> 
                 <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Noticia" required></textarea>
                 <br><br><br><br><br>
-                <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar">
+            
+                <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar"> <button  onclick="redireccion()">Mis noticias</button>
             </form>
 
-            <form action="../tablas/tablaNoticia.php">
-                <input type="submit" value="ver mis noticias">
-            </form>
+            
+         
+           
 
 
         </div>
@@ -80,6 +82,8 @@
 
         </div>
     </div>
+
+    <script src="../js/redireccion.js"></script>
 
 </body>
 

@@ -91,7 +91,8 @@
                 ?>
                 </select>
                 <br><br><br><br><br><br><br><br><br>
-                <input type="submit" name="btn_crear" value="Crear hogar">
+                <input  type="submit" name="btn_crear" value="Crear hogar"> 
+                <button onclick="redireccionIntegranteHogar()">Mii hogar</button>
             </form>
             
             
@@ -108,6 +109,8 @@
        
         </div>
 </div>
+<script src="../js/redireccion.js"></script>
+
     
 </body>
 </html>
