@@ -8,7 +8,7 @@
   if($numero > 0){
     $con=conectar();
     $id = $_SESSION['id_integrante'];
-    $sql="SELECT * FROM noticia WHERE usuario_id_fk = '$id'";
+    $sql="SELECT * FROM noticia WHERE usuario_id_fk = '$id' AND estado = 1";
     $query=mysqli_query($con, $sql);    
   }else{
     die('No hay datos');
@@ -34,7 +34,8 @@
         <th>Fecha</th>
         <th>Cuerpo noticia</th>
 </tr>
-<a href="../formularios/eliminarNoticia.php">Eliminar Noticia</a>
+<button onclick='tablaNoticia()'>EliminarNoticia</button>
+
 <?php
 while ($mostrar=mysqli_fetch_array($query)){
 ?>
@@ -49,5 +50,6 @@ while ($mostrar=mysqli_fetch_array($query)){
 <?php } ?>
 </table>
 </div>
+<script src="../js/redireccion.js"></script>
 </body>
 </html>

@@ -14,6 +14,8 @@
 
        $con->cambiarEstado($integrante);
 
+       echo 'Integrante añadido exitosamente!';
+
     }
 ?>
 <!DOCTYPE html>

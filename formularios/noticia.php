@@ -13,6 +13,8 @@
         $con->ingresarNoticia($titulo,$tipo,$cuerpo,$usuario_fk);
         session_abort();
 
+        echo 'Noticia creada exitosamente';
+
 
     }
 
@@ -60,7 +62,7 @@
                 <textarea name="txt_comentario" id="txt_comentario" cols="10" rows="15" placeholder="Noticia" required></textarea>
                 <br><br><br><br><br>
             
-                <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar"> <button  onclick="redireccion()">Mis noticias</button>
+                <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar"> <button  onclick="redireccion()">Noticias</button>
             </form>
 
             

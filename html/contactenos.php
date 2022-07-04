@@ -49,7 +49,7 @@ actua como intermediaria entre el usuario y la junta de vecinos
                 <!-- Item de lista con la etiqueta de hipervinvulo para ir a la pagina de galeria de imagenes-->
                 <li><a href="galeria.html">Galeria de imagenes</a></li>
                 <!-- Item de lista con la etiqueta de hipervinvulo para ir a la pagina de contactenos-->
-                <li><a href="contactenos.html">Contactenos</a></li>
+                <li><a href="contactenos.php">Contactenos</a></li>
                 <!-- Item de lista con la etiqueta de hipervinvulo para ir a la pagina de Registro e iniciar sesion-->
                 <li><a href="login.php">Registro - Iniciar sesion</a></li>
 

@@ -67,6 +67,32 @@
             return 1;
         }
     }
+
+    public function cuantas(){
+        session_start();
+        $id = $_SESSION['id_integrante'];
+        
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        if(!$this->conexion){
+            die('Error al conectarse');
+        }
+        $sql = "SELECT usuario.nombre, integrante_hogar.tipo_integrante, hogar.calle
+        FROM usuario
+        INNER JOIN integrante_hogar on usuario.id = integrante_hogar.usuario_id_fk
+        INNER JOIN hogar on integrante_hogar.id_hogar_fk = hogar.id
+        WHERE usuario.id = '$id'";
+
+        $result = mysqli_query($this->conexion,$sql);
+        
+        if(mysqli_num_rows($result)>0){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+
+    
         
     }
+}
 ?>

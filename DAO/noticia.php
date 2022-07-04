@@ -44,8 +44,6 @@
        }
 
        public function existe(){
-    
-
         $id = $_SESSION['id_integrante'];
         
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
@@ -58,12 +56,17 @@
         if(mysqli_num_rows($result)>0){
             return 1;
         }
+
+
     }
 
-
-    
-
-
+    public function eliminar($numero){
+        $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
+        $stml = $this->conexion->prepare("UPDATE noticia SET estado = ? where id = ?");
+        $stml->bind_param("ii",$nuevo,$numero);
+        $nuevo = 0;
+        $stml->execute();
+       }
     }
 
 

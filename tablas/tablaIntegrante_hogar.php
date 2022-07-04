@@ -7,12 +7,14 @@
     $num = $conexion->obtener_id_hogar($_SESSION['id_integrante']);
 
 
+
     $con=conectar();
     $sql="SELECT usuario.nombre, integrante_hogar.tipo_integrante, integrante_hogar.parentesco_integrante, hogar.calle
     FROM usuario
     INNER JOIN integrante_hogar on integrante_hogar.usuario_id_fk = usuario.id
     INNER JOIN hogar on integrante_hogar.id_hogar_fk = hogar.id
     WHERE integrante_hogar.id_hogar_fk = '$num'";
+    
     $query=mysqli_query($con, $sql);
        
 ?>

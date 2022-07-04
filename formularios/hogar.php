@@ -6,38 +6,45 @@
     include '../DAO/conexion.php';
     
     if(isset($_REQUEST["btn_crear"])){
-        $nombre = $_REQUEST['_nombre_calle'];
-        $numeracion = $_REQUEST['_numeracion'];
-        $sector_id_fk = $_REQUEST['_sector'];
-        $propietario = $_SESSION['propietario'];
-        $hogar_id_fk;
+        try {
+            $nombre = $_REQUEST['_nombre_calle'];
+            $numeracion = $_REQUEST['_numeracion'];
+            $sector_id_fk = $_REQUEST['_sector'];
+            $propietario = $_REQUEST['propietario'];
+            $hogar_id_fk;
 
-
-            
-        $existe = "SELECT COUNT(id) FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
-        $cont = current($con->query($existe)->fetch_assoc());
+            $x = $cone->cuantas();
         
-        if ($cont>0) {
-            echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
+            $existe = "SELECT COUNT(id) FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+            $cont = current($con->query($existe)->fetch_assoc());
+            
+            if ($cont>0) {
+                echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
 
-        }else{
-            $cone->ingresarHogar($nombre,$numeracion,$sector_id_fk,$propietario);
-            session_start();
-            $cone->cambiarEstado_user($_SESSION['id_integrante']);
+            }else{
+                
+                if($x == 0){
+                    $cone->ingresarHogar($nombre,$numeracion,$sector_id_fk,$propietario);
+                    $cone->cambiarEstado_user($_SESSION['id_integrante']);
+                    $consulta = "SELECT * FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+                    $obtener = mysqli_query($con,$consulta) or die(mysql_error($con));
+                    foreach ($obtener as $opciones) {      
+                        $hogar_id_fk = $opciones['id'];
+                    }
+                    $conexion->crearTabla($_SESSION['id_integrante'],$hogar_id_fk);
 
-            $consulta = "SELECT * FROM hogar WHERE calle = '$nombre' and numeracion= '$numeracion' and sector_id_fk = '$sector_id_fk'";
+                    echo 'Se ha creado exitosamente el hogar';
 
-            $obtener = mysqli_query($con,$consulta) or die(mysql_error($con));
-            foreach ($obtener as $opciones) {      
-                $hogar_id_fk = $opciones['id'];
+                }else{
+                    echo 'Advertencia: Por ahora solo se puede ingresar un hogar por persona';
+                    
+                }
             }
-
-            
-            
-            $conexion->crearTabla($_SESSION['id_integrante'],$hogar_id_fk);
-
+        } catch (\Throwable $th) {
+           die('Error fatal');
         }
-
+        
+    
     }
 
 
@@ -85,7 +92,7 @@
                 <?php
                     foreach ($obtener as $opciones) {
                         ?>
-                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre']?></option>
+                        <option value="<?php echo $opciones['id'] ?>"><?php echo $opciones['nombre'].' '?></option>
                       
                         <?php
                     }
@@ -101,7 +108,9 @@
 
                 <br><br><br><br>
                 <input  type="submit" name="btn_crear" value="Crear hogar"> 
-                <button onclick="redireccionIntegranteHogar()">Hogar</button>
+
+                <button class="btn_hogares" onclick="redireccionIntegranteHogar()">Hogar</button>
+                <button class="btn_agregar" onclick="redireccionAgregar()">Agregar Integrante</button>
             </form>
             
             
@@ -118,6 +127,6 @@
        
         </div>
 </div>
-<script src="../js/redireccion.js"></script>    
+<script src="../js/redireccion.js"></script>
 </body>
 </html>
