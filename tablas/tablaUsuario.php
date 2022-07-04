@@ -11,10 +11,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stilos/tablaUser.css">
+    <link rel="stylesheet" href="../stilos/tablaUsuario.css">
     <title>Tabla usuario</title>
 </head>
 <body>
+    <br>
     <div style="text-align:center">
     <table>
         <tr>
