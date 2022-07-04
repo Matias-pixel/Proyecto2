@@ -64,7 +64,7 @@
                 </select>
 
                 <label for="">Seleccione el nuevo cargo</label>
-                <select name="_cargo" id="">
+                <select name="_cargo" id="" required>
                     <option value=""></option>
                 <?php
                     include '../DAO/conexion.php';

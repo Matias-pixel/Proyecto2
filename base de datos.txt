@@ -56,8 +56,10 @@ INSERT INTO cargo_directivo VALUES (null,'tesorero', now(),NULL,1);
 CREATE TABLE acta_reunion(
     id int AUTO_INCREMENT PRIMARY key,
     titulo_acta varchar(30),
+    tipo varchar(30),
     razon_reunion varchar(30),
     fecha_acta datetime,
+    estado bit,
 
     cargo_directivo_id_fk int,
 
@@ -120,21 +122,7 @@ INSERT INTO usuario VALUES (null,'666-6','1234','raul','marchant',now(),'soltero
 INSERT INTO usuario VALUES (null,'777-7','1234','jose','soto',now(),'soltero','+569 77143248','matiasasfasf@gmail.com','masculino','ninguna','ninguna','desplazamiento',1,0,'si',1);
 
 
-cargo date
 
-INSERT INTO cargo_directivo VALUES(null,"vecino",now(),1);
-
-CONSULTA INNER JOIN
-SELECT usuario.nombre, cargo_directivo.nombre_cargo, acta_reunion.titulo_acta
-FROM usuario
-INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
-INNER JOIN acta_reunion on acta_reunion.cargo_directivo_id_fk = cargo_directivo.id;
-
-SELECT usuario.nombre AS 'HOLA', cargo_directivo.nombre_cargo, acta_reunion.titulo_acta
-FROM usuario
-INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
-INNER JOIN acta_reunion on acta_reunion.cargo_directivo_id_fk = cargo_directivo.id
-WHERE cargo_directivo.id= 1;
 
 
 
@@ -156,41 +144,11 @@ CREATE TABLE integrante_hogar(
 
 
 
-
-USUARIO
-
-INSERT INTO usuario VALUES (null,'admin','admin','Admin',now(),'soltero','+569 77143248','admin@gmail.com','admin','masculino','ninguna','serAdmin','presidente','ninguna','no',1);
-
-
-SELECT count(integrante_hogar.id) 
-FROM hogar
-INNER JOIN integrante_hogar ON hogar.id = integrante_hogar.hogar_id_fk
-INNER JOIN usuario ON integrante_hogar.usuario_id_fk = usuario.id
-WHERE usuario.id = '16';
-
-
-INSERT INTO integrante_hogar VALUES (null,'jefe','hijo',now(),1,15,6);
-
-
-
-
-
-
-
-CREATE TABLE observacion(
-	id int PRIMARY KEY AUTO_INCREMENT,
-    comentario varchar(120),
-    fecha_hora datetime,
-   	ticket_id_fk int,
-    estado bit,
-    FOREIGN KEY (ticket_id_fk) REFERENCES ticket(id)
-);
-
-
 CREATE TABLE ticket(
-	id int AUTO_INCREMENT PRIMARY KEY,
+    id int AUTO_INCREMENT PRIMARY KEY,
     nombre varchar(30),
     motivo varchar(30),
+	comentario varchar(120),
     fecha_hora datetime,
     estado_ticket bit,
     
@@ -229,9 +187,9 @@ CREATE TABLE tipo_documento(
 
 );
 
-INSERT INTO tipo_documento VALUES (null, administrativo, 1);
-INSERT INTO tipo_documento VALUES (null, credito, 1);
-INSERT INTO tipo_documento VALUES (null, virtual, 1);
+INSERT INTO tipo_documento VALUES (null, "administrativo", 1);
+INSERT INTO tipo_documento VALUES (null, "credito", 1);
+INSERT INTO tipo_documento VALUES (null, "virtual", 1);
 
 CREATE TABLE solicitud_documento(
 	id int AUTO_INCREMENT PRIMARY KEY,
@@ -241,6 +199,7 @@ CREATE TABLE solicitud_documento(
     folio varchar(30),
     nombre_retira varchar(50),
     estado bit,
+    estado_entrega varchar (10),
     
     usuario_id_fk int,
     tipo_documento_id_fk int,

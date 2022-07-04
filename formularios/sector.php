@@ -2,7 +2,7 @@
     require '../DAO/sector.php';
     $con = new DaoSector();
     if(isset($_REQUEST['btn_enviar'])){
-        $nombre =  strlower($_REQUEST["name"]);
+        $nombre =  strtolower($_REQUEST["name"]);
         $id_comuna_fk = strtolower($_REQUEST['_comuna_fk']);
 
         $con->IngresarSector($nombre,$id_comuna_fk);
