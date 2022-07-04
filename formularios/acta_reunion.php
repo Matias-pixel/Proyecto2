@@ -8,27 +8,28 @@
         $razon = $_REQUEST['razon'];
         session_start();
         $fecha = $_REQUEST['fecha_acta'];
-        $id=$_SESSION['id_integrante'];
+        $id= $_SESSION['id_integrante'];
 
         $id_pls;
        
 
-        $sql = "SELECT SELECT usuario.nombre, cargo_directivo.id
+        $sql = "SELECT usuario.nombre, cargo_directivo.id
         FROM usuario
         INNER JOIN cargo_directivo on usuario.cargo_directivo_id_fk = cargo_directivo.id
         WHERE usuario.id = '$id'";
         $obtener = mysqli_query($con,$sql) or die(mysql_error($con));
   
         foreach ($obtener as $opciones) {
-            $id_pls = $opciones['cargo_directivo.id'];
+            $id_pls = $opciones['id'];
            
         }
 
         
         $conexion->insertarActa($nombre,$tipo_reunion,$razon,$fecha,$id_pls);
 
+
         
-        
+        echo 'Acta creada con exito!';
 
 
     }
@@ -61,15 +62,16 @@
                 <br>
                 <br>
             <form action="acta_reunion.php" method="POST">
-                <input type="text" name="titulo" id="titulo" placeholder="Titulo del acta:">
-                <input type="text" name="_tipo_reunion" id="tipo" placeholder="Ingrese el tipo de reunion">
-                <textarea name="razon" id="" cols="30" rows="10"></textarea>
-                <label for="fecha_acta">Fecha del acta:</label>
+                <input type="text" name="titulo" id="titulo" placeholder="Titulo del acta:" required>
+                <input type="text" name="_tipo_reunion" id="tipo" placeholder="Ingrese el tipo de reunion" required>
+                <textarea name="razon" id="" cols="30" rows="10" required></textarea>
+                <label for="fecha_acta">Fecha de la Reunion:</label>
                 <br>
-                <input type="datetime-local" name="fecha_acta" id="fecha_acta" placeholder="fecha acta">
+                <input type="datetime-local" name="fecha_acta" id="fecha_acta" placeholder="fecha acta" required>
                 <br><br>
 
-                <input type="submit" value="Crear acta" name="btn_enviar">
+                <input type="submit" value="Crear acta" name="btn_enviar"> <button onclick="tablaActas()">Actas</button>
+                
             </form>
             
             
@@ -86,7 +88,7 @@
        
         </div>
 </div>
-    
+<script src="../js/redireccion.js"></script>
     
 </body>
 </html>

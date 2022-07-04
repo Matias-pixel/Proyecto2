@@ -12,6 +12,7 @@
        
         $con->ingresarSolicitud($comentario,$folio,$retira,$_SESSION['id_integrante'],$tipo);
         session_abort();
+        echo 'La solicitud se ha ingresado con exito';
 
 
     }

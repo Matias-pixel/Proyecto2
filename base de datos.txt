@@ -229,6 +229,10 @@ CREATE TABLE tipo_documento(
 
 );
 
+INSERT INTO tipo_documento VALUES (null, administrativo, 1);
+INSERT INTO tipo_documento VALUES (null, credito, 1);
+INSERT INTO tipo_documento VALUES (null, virtual, 1);
+
 CREATE TABLE solicitud_documento(
 	id int AUTO_INCREMENT PRIMARY KEY,
     fecha_pedido datetime,

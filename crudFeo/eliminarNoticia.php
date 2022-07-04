@@ -7,6 +7,8 @@
 
         $con->eliminar($id);
 
+        echo 'Noticia eliminada correctamente!';
+
 
     }
 
@@ -39,6 +41,7 @@
                 <br>
             <form action="eliminarNoticia.php" method="POST">
                 <label for="integrante">Número</label>
+                <br>
                 <select name="id_noticia" id="integrante" required>
                     <option value=""></option>
                     <?php
@@ -57,7 +60,8 @@
                     }
                     ?>
                 </select>
-                <br><br><br><br><br><br><br>
+                <br><br><br><br><br><br><br><br><br><br>
+                <br><br><br>
                 <input type="submit" name="btn_ingresar" value="Eliminar">
             </form>
             

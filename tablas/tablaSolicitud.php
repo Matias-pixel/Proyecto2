@@ -3,7 +3,7 @@
   require '../DAO/solicitud_documento.php';
   $conexion = new DaoSolicitudDocumento();
   $numero = $conexion->existe();
-    $con=conectar();
+  $con=conectar();
 
 
     if($numero > 0){

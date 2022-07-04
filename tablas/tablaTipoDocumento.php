@@ -1,7 +1,7 @@
 <?php
   include("../controladores/conexionTablas.php");
     $con=conectar();
-    $sql="SELECT * FROM sector";
+    $sql="SELECT * FROM tipo_documento";
     $query=mysqli_query($con, $sql);
        
 ?>
@@ -21,8 +21,7 @@
         <th>ID</th>
         <th>Nombre</th>
 
-        <th>Comuna</th>
-     
+
 </tr>
 <?php
 while ($mostrar=mysqli_fetch_array($query)){
@@ -32,7 +31,7 @@ while ($mostrar=mysqli_fetch_array($query)){
     <td><?php echo $mostrar['id']?></td>
     <td><?php echo $mostrar['nombre']?></td>
 
-    <td><?php echo $mostrar['comuna_id_fk']?></td>
+
 </tr>
 <?php } ?>
 </table>

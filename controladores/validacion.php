@@ -32,7 +32,7 @@
 
            
         }else{
-           header("location: ../html/login.php");
+           header("location: ../html/login.php");  
 
         }
 

@@ -1,0 +1,136 @@
+/*
+    Color fondo: #632432;
+    Color header: 246355;
+    Color borde: 0F362D;
+    Color iluminado: 369681;
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+    background-color: white;
+    font-family: Lato, sans-serif;
+    
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9rem;
+
+}
+
+button{
+
+    width: 50%;
+    margin: auto;
+    border: solid thin black;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: white;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+    
+}
+
+button:hover{
+    width: 50%;
+    margin: auto;
+    border: solid thin black;
+    padding: 0.7rem;
+    border-radius: 2rem;
+    background-color: #f8942c;
+    transition: all 0.5s ease;
+    font-weight: 600;
+    margin-top: 3rem;
+    font-size: .8rem;
+    cursor: pointer;
+    color: #222;
+}
+
+.buttons{
+   
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+}
+
+
+
+#main-container{
+    margin: 150px auto;
+    width: 600px;
+}
+
+table{
+    background-color: white;
+   
+    box-shadow: 20px 20px 20px 5px #FFE0B2;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid black;
+    margin: 0 auto;
+
+}
+th{
+    background-color: #f8942c;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+   
+
+}
+th, td{
+    padding: 20px;
+    border: 1px solid black;
+}
+
+thead{
+    background-color: #f8942c;
+    border-bottom: solid 5px #0F362D;
+    color: white;
+    padding: 0.75rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+tr:nth-child(even){
+    background-color: white;
+}
+
+tr:hover td{
+    background-color: #fcf6bd ;
+    color: black;
+}
+
+header {
+    background: #f8942c;
+    width: 100%;
+    height: 80px;
+    clear: both;
+    content: '';
+    display: table;
+
+}
+
+nav {
+    font-size: 17px;
+    margin-left: 25px;
+    position: relative;
+    float: right;
+    padding-right: 70px;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 70px;
+    padding: 20px 0;
+    float: left;
+
+}

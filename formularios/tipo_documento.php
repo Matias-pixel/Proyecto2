@@ -53,6 +53,7 @@
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
                     <input type="submit" name = "btn_crear" value="Crear">
+                    <button onclick="tablaTipoD()">Tipos Documento</button>
            
 
 
@@ -72,6 +73,6 @@
            
             </div>
     </div>
-    
+    <script src="../js/redireccion.js"></script>
 </body>
 </html>

@@ -2,10 +2,12 @@
     require '../DAO/sector.php';
     $con = new DaoSector();
     if(isset($_REQUEST['btn_enviar'])){
-        $nombre = $_REQUEST["name"];
-        $id_comuna_fk = $_REQUEST['_comuna_fk'];
+        $nombre =  strlower($_REQUEST["name"]);
+        $id_comuna_fk = strtolower($_REQUEST['_comuna_fk']);
 
         $con->IngresarSector($nombre,$id_comuna_fk);
+
+        echo 'El sector se creo con éxito!';
 
 
         
@@ -65,9 +67,9 @@
 
                 
 
-                </select>
+                </select> 
                 <br><br><br><br><br><br><br><br><br><br><br><br>
-                <input  name="btn_enviar" type="submit" value="Crear sector">
+                <input  name="btn_enviar" type="submit" value="Crear sector"> <button onclick="tablaSector()">Sectores</button>
             </form>
             
             
@@ -84,6 +86,7 @@
        
         </div>
 </div>
+<script src="../js/redireccion.js"></script>
     
 </body>
 </html>

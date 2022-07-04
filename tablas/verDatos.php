@@ -1,9 +1,10 @@
 <?php
     include("../controladores/conexionTablas.php");
     $con=conectar();
-    $sql="SELECT * FROM usuario WHERE discapacidad != 'ninguna'";
+    // $sql="SELECT COUNT(discapacidad) FROM usuario WHERE discapacidad < 5 AND f_nacimiento <= '1960-01-01';";
+   $sql="SELECT * from usuario where TIMESTAMPDIFF(YEAR,f_nacimiento,CURDATE()) >= 60 AND discapacidad != 'ninguna'";
     $query=mysqli_query($con, $sql);
-       
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,11 +12,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stilos/tablaUser.css">
+    <link rel="stylesheet" href="../stilos/tablaUsuario.css">
     <title>Tabla usuario</title>
 </head>
 <body>
+    <br>
 <h2 style='text-align:center'>Personas discapacitadas</h2>
+<br>
 <div style="text-align:center">
     <table>
         <tr>
@@ -45,16 +48,19 @@ while ($mostrar=mysqli_fetch_array($query)){
     <td><?php echo $mostrar['correo']?></td>
     <td><?php echo $mostrar['sexo']?></td>
     <td><?php echo $mostrar['discapacidad']?></td>
-    
+
 </tr>
 <?php } ?>
 </table>
+
 </div>
 <br>
-<div>
-    <a href="verVotantes.php">Ver votantes</a>
+
+<div class="buttons">
+<button onclick="tablaVotantes()">Ver Votantes</button> 
+<button onclick="tablaArrendatarios()">Arrendatarios</button>
 </div>
 
-
+<script src="../js/redireccion.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     if(isset($_REQUEST['btn_enviar'])){
         $nombre = $_REQUEST['nombre_cargo'];
         $con->insertarCargo($nombre);
+        echo 'cargo directivo creado con exito!';
         
 
 

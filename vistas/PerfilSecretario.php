@@ -29,7 +29,7 @@
                
                 <li><a href="../formularios/noticia.php" target="iframe-carga">Noticia</a></li>
                 <li><a href="../formularios/ticket.php" target="iframe-carga">Ticket</a></li>
-                <li><a href="../formularios/cambiar_estado.php" target="iframe-carga">Cambiar cargo</a></li>
+                <li><a href="../crudFeo/cambiar_estado.php" target="iframe-carga">Cambiar cargo</a></li>
 
                 <li><a href="../html/seccionNoticias.html">Cerrar sesión</a></li>
 

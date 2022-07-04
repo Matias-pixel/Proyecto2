@@ -25,3 +25,34 @@ function tablaNoticia()
     location.href ="../crudFeo/eliminarNoticia.php";
 }
 
+function tablaTipoD() {
+    location.href="../tablas/tablaTipoDocumento.php";
+}
+
+function tablaActas() {
+    location.href="../tablas/tablaActaReunion.php";
+}
+
+function tablaSector() {
+    location.href="../tablas/tablaSector.php";
+}
+
+function tablaComuna() {
+    location.href="../tablas/tablaComuna.php";
+}
+
+function tablaVotantes() {
+    location.href="../tablas/verVotantes.php";
+}
+
+function tablaArrendatarios() {
+    location.href="../tablas/tablaPropietario.php";
+}
+
+function tablaEtarios() {
+    location.href="../tablas/verDatos.php";
+}
+
+
+
+
