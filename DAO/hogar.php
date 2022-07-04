@@ -34,10 +34,10 @@
         }
        }
        
-       public function ingresarHogar($calle,$numeracion,$sector_id_fk){
+       public function ingresarHogar($calle,$numeracion,$sector_id_fk,$preopietario){
         $this->conexion = new mysqli($this->server,$this->user,$this->pass,$this->db);
-        $stml = $this->conexion->prepare("INSERT INTO hogar (calle,numeracion,f_creacion,estado,sector_id_fk) VALUES (?,?,?,?,?)");
-        $stml->bind_param("sssii", $calle,$numeracion,$hoy,$estado,$sector_id_fk);
+        $stml = $this->conexion->prepare("INSERT INTO hogar (calle,numeracion,f_creacion,estado,propietario,sector_id_fk) VALUES (?,?,?,?,?,?)");
+        $stml->bind_param("sssisi", $calle,$numeracion,$hoy,$estado,$preopietario,$sector_id_fk);
         $estado= 1;
         $hoy = date("Y-m-d H:i:s"); 
         $stml->execute();

@@ -9,6 +9,7 @@
         $nombre = $_REQUEST['_nombre_calle'];
         $numeracion = $_REQUEST['_numeracion'];
         $sector_id_fk = $_REQUEST['_sector'];
+        $propietario = $_SESSION['propietario'];
         $hogar_id_fk;
 
 
@@ -20,7 +21,7 @@
             echo "Error: Es posible que el hogar que este intentando ingresar ya se encuentre registrado";
 
         }else{
-            $cone->ingresarHogar($nombre,$numeracion,$sector_id_fk);
+            $cone->ingresarHogar($nombre,$numeracion,$sector_id_fk,$propietario);
             session_start();
             $cone->cambiarEstado_user($_SESSION['id_integrante']);
 
@@ -90,9 +91,17 @@
                     }
                 ?>
                 </select>
-                <br><br><br><br><br><br><br><br><br>
+                <label for="leaded">Eres el propietario?</label>
+                <select name="propietario" id="leaded" required>
+                    <option value=""></option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select>
+
+
+                <br><br><br><br>
                 <input  type="submit" name="btn_crear" value="Crear hogar"> 
-                <button onclick="redireccionIntegranteHogar()">Mii hogar</button>
+                <button onclick="redireccionIntegranteHogar()">Hogar</button>
             </form>
             
             
@@ -109,8 +118,6 @@
        
         </div>
 </div>
-<script src="../js/redireccion.js"></script>
-
-    
+<script src="../js/redireccion.js"></script>    
 </body>
 </html>
